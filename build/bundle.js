@@ -48,11 +48,7 @@
 	var game_state = __webpack_require__(2);
 
 
-	document.write(game_state.sayHelloInEnglish());
-	document.write(" ");
-	document.write(game_state.sayHelloInSpanish());
-
-	$(".hello_text").html(game_state.sayHelloInEnglish())
+	$(".hello_text").html(game_state.sayHelloInEnglish());
 
 
 /***/ },
