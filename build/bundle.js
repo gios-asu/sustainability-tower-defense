@@ -52,6 +52,8 @@
 	document.write(" ");
 	document.write(game_state.sayHelloInSpanish());
 
+	$(".hello_text").html(game_state.sayHelloInEnglish())
+
 
 /***/ },
 /* 1 */
