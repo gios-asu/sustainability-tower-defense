@@ -1,3 +1,4 @@
+var $ = require("jquery");
 var game_state = require("./game_state.js");
 
 
