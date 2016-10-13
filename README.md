@@ -1,6 +1,8 @@
 # sustainability-tower-defense
 Defender Game (of Earth?)
 
+[![Build Status](https://travis-ci.org/gios-asu/sustainability-tower-defense.svg?branch=rraub-scaffolding)](https://travis-ci.org/gios-asu/sustainability-tower-defense)
+
 
 # Getting Started
 * We'll start off with using just [Webpack](https://github.com/webpack/webpack/), have a look at their [getting started guide](https://webpack.github.io/docs/tutorials/getting-started/)
@@ -10,3 +12,6 @@ Defender Game (of Earth?)
 * > npm run build - to build the app once
 * > npm run watch - to build the app every time you hit save
 * > npm server - to start a live reloading server on [http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) (note it does not update the files on disk in build)
+
+# Testing/Linting
+* > npm run lint - to run Javascript Linter (ESLint)
