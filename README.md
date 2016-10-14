@@ -1,7 +1,7 @@
 # sustainability-tower-defense
 Defender Game (of Earth?)
 
-[![Build Status](https://travis-ci.org/gios-asu/sustainability-tower-defense.svg?branch=rraub-scaffolding)](https://travis-ci.org/gios-asu/sustainability-tower-defense)
+[![Build Status](https://travis-ci.org/gios-asu/sustainability-tower-defense.svg?branch=master)](https://travis-ci.org/gios-asu/sustainability-tower-defense)
 
 
 # Getting Started
