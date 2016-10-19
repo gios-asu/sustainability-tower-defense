@@ -1,6 +1,9 @@
 /** CSS styles */
 .game-title {
   color: red;
+    font-family: papyrus;
+    font-style: italic;
+    font-size: 70px;
 }
 
 .button {
@@ -16,8 +19,6 @@
   transition: all 0.5s;
   cursor: pointer;
   margin: 300px;
-  
-  
 }
 
 .button span {
@@ -45,12 +46,16 @@
 }
 
 
-div {
+#bgimg {
+    width: 800px;
+    height: 600px;
+    border: 1px solid black;
+    background-image: url('../img/bg3.png');
+}
+
+#lv1{
     width: 800px;
     height: 600px;
     border: 1px solid black;
 }
 
-.bgimg {
-    background-image: url('../img/bg3.png');
-}

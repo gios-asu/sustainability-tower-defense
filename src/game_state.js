@@ -1,3 +1,4 @@
+
 module.exports = {
   sayHelloInEnglish: function() {
     return "HELLO";
@@ -8,6 +9,8 @@ module.exports = {
   }
 };
 
-function myFunction() {
-    document.getElementById("myDiv").style.backgroundImage = "../img/bg3.png";
+function clickFunc(){
+    document.getElementById('bgimg').style.visibility = none;
+    document.getElementById('lv1').style.visibility = block;
 }
+
