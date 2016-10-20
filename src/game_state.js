@@ -10,7 +10,7 @@ module.exports = {
 };
 
 function clickFunc(){
-    document.getElementById('bgimg').style.display = none;
-    document.getElementById('lv1').style.display = block;
+    document.getElementById('bgimg').style.visibility = none;
+    document.getElementById('lv1').style.visibility = block;
 }
 
