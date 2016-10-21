@@ -49,7 +49,9 @@
 
 
 	$(".hello_text").html(game_state.sayHelloInEnglish());
-
+	$(".button").click(game_state.clickFunc());
+	/*var background = new Raster("img/bg1.jpg", [400, 300]);
+	background.position = view.center;*/
 
 /***/ },
 /* 1 */
@@ -10281,6 +10283,7 @@
 /* 2 */
 /***/ function(module, exports) {
 
+	
 	module.exports = {
 	  sayHelloInEnglish: function() {
 	    return "HELLO";
@@ -10288,8 +10291,15 @@
 
 	  sayHelloInSpanish: function() {
 	    return "Hola";
-	  }
+	  },
+	    clickFunc: function(){
+	    document.getElementById('bgimg').style.visibility = 'none';
+	    document.getElementById('lv1').style.visibility = 'block';
+	   }
 	};
+
+
+
 
 
 /***/ }
