@@ -7,9 +7,10 @@ module.exports = {
   sayHelloInSpanish: function() {
     return "Hola";
   },
+    
     clickFunc: function(){
-    document.getElementById('bgimg').style.visibility = 'none';
-    document.getElementById('lv1').style.visibility = 'block';
+    document.getElementById('bgimg').style.display = 'none';
+    document.getElementById('lv1').style.display = 'block';
    }
 };
 
