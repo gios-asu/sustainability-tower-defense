@@ -37,20 +37,20 @@ function makeRect()
 }
 
 function followPath(){
-    var turret = new Path.Circle({
+    var enemy = new Path.Circle({
         center: [25,line.position.y],
         radius: 20,
         fillColor: 'blue'
     });
     var steps = 200;
     var dx = 0;
-    dx = (700 - turret.position.x)/steps;
+    dx = (700 - enemy.position.x)/steps;
     view.onFrame = function(event) {
         
         
         // do the movement
-        if(turret.position.x != 700){
-        turret.position.x += dx;
+        if(enemy.position.x != 700){
+        enemy.position.x += dx;
         }
     }
 
