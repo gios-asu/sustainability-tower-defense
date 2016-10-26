@@ -1,18 +1,22 @@
-var square, circle;
+var square, circle, line;
 
 function path1()
 {
+    		// Get a reference to the canvas object
+        paper.install(window);//needed to do animiation
+		//var canvas = document.getElementById('myCanvas');
+		paper.setup("myCanvas");
     // Create a Paper.js Path to draw a line into it:
-		var line = new paper.Path();
+		line = new paper.Path();
         
 		// Give the stroke a color
 		line.strokeColor = 'black';
-		var start = new paper.Point(0, 200);
+		var start = new paper.Point(0, 400);
 		// Move to start and draw a line from there
 		line.moveTo(start);
 		// Note that the plus operator on Point objects does not work
 		// in JavaScript. Instead, we need to call the add() function:
-		line.lineTo([ 700, 200 ]);
+		line.lineTo([ 700, 400 ]);
 }
 
 function makeCircle()
@@ -31,6 +35,30 @@ function makeRect()
     
    
 }
+
+function followPath(){
+    var turret = new Path.Circle({
+        center: [25,line.position.y],
+        radius: 20,
+        fillColor: 'blue'
+    });
+    var steps = 200;
+    var dx = 0;
+    dx = (700 - turret.position.x)/steps;
+    view.onFrame = function(event) {
+        
+        
+        // do the movement
+        if(turret.position.x != 700){
+        turret.position.x += dx;
+        }
+    }
+
+ 
+
+    
+}
+
 function main()//everything goes here
 {
     path1();
@@ -46,5 +74,6 @@ function main()//everything goes here
     circle.onMouseMove = function(event) {//follow mouse code
     this.position = event.point;
     }
+    followPath();
   
 }
