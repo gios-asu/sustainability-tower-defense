@@ -1,18 +1,24 @@
-function placeTurret(e){
-    var circle = new Path.Circle({
-        center: [event.clientX, event.clientY],
-	    radius: 50,
-	    fillColor: 'red'
-    });
-  
-    circle.onMouseMove = function(event) {//follow mouse code
-        this.position = event.point;
+function placeTurret(x, y) {
+  var turret = new Path.Circle({
+    center : [x, y],
+    radius : 20,
+    fillColor : 'blue'
+  });
+}
+
+function followMouse() {
+  var map = document.getElementById('lv1bgimg');
+  var r = map.getBoundingClientRect();
+  $(document).mousemove(function (e) {
+    if (e.pageX > r.left && e.pageX < r.right && e.pageY > r.top && e.pageY < r.bottom) {
+      $("#turret").css({left: e.pageX-50, top: e.pageY-50});
     }
-    circle.onMouseDown = function(event){
-        turret = new Path.Circle({
-            center : [event.point.x, event.point.y],
-            radius : 20,
-            fillColor : 'blue'
-        });
-    }   
+ 
+  });
+  
+  $(document).mousedown(function (e) {  
+    if (e.pageX > r.left && e.pageX < r.right && e.pageY > r.top && e.pageY < r.bottom) {
+      placeTurret(e.pageX - r.left, e.pageY - r.top);
+    }
+  });
 }

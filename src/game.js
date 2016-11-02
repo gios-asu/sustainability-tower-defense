@@ -6,5 +6,13 @@ $(".hello_text").html(game_state.sayHelloInEnglish());
 $(".button").click(function(){
     game_state.clickFunc();
 });
+
+
+
+
+
+
+
+
 /*var background = new Raster("img/bg1.jpg", [400, 300]);
 background.position = view.center;*/

@@ -1,8 +1,7 @@
-var square, circle, line,line2,line3,start;
-var startx = [],starty = [], endx= [], endy = [];//array to keep track of point location 
+var square, circle, line, line2, line3, start;
+var startx = [], starty = [], endx = [], endy = [];//array to keep track of point location 
 
-function path1()
-{
+function path1() {
     	
     // Create a Paper.js Path to draw a line into it:
   startx.push(0);
@@ -26,7 +25,7 @@ function path1()
   endy.push(200);
   line2 = new paper.Path(); 
   line2.strokeColor = 'black';
-  var start = new paper.Point(startx[1], starty[1]);
+  start = new paper.Point(startx[1], starty[1]);
   line2.moveTo(start);
   line2.lineTo([ endx[1], endy[1] ]);
     
@@ -37,7 +36,7 @@ function path1()
   endy.push(0);
   line3 = new paper.Path(); 
   line3.strokeColor = 'black';
-  var start = new paper.Point(startx[2], starty[2]);
+  start = new paper.Point(startx[2], starty[2]);
   line3.moveTo(start);
   line3.lineTo([ endx[2], endy[2] ]);
     /*arc
@@ -55,33 +54,33 @@ function path1()
 
 
 var enemy;
-function makeCircle(start,end)
-{//future enemy object
-   enemy = new Path.Circle({
-    center: [start,end],
+function makeCircle(start, end) {
+  //future enemy object
+  enemy = new Path.Circle({
+    center: [start, end],
     radius: 20,
     fillColor: 'blue'
     });
 }
 
 ////AI path following
-function followPath(obj,st){//(moving obj, st holds array index value)
+function followPath(obj, st){//(moving obj, st holds array index value)
 
   var steps = 200;//speed
   var dx = 0, dy=0;
   
-  if(endx[st] - startx[st] != 0 && endy[st]-starty[st] == 0 )
+  if (endx[st] - startx[st] != 0 && endy[st] -starty[st] == 0)
     {
        //move horizontal
-      dx = (endx[st] - obj.position.x)/steps; //endpoint - obj position
+      dx = (endx[st] - obj.position.x) / steps; //endpoint - obj position
       view.onFrame = function(event) {    
         // do the movement
         if(obj.position.x != endx[st])
           obj.position.x += dx;
         else
           {
-            var check = st+1;
-            if(check <=startx.length-1)
+            var check = st + 1;
+            if (check <= startx.length-1)
             {//waits until animation comes to a stop to recursively call
               st++;
               followPath(obj,st);
@@ -145,6 +144,6 @@ function main()//everything goes here
   path1();//draw path
   makeCircle(startx[0],starty[0]);//make obj
   followPath(enemy,0);//move obj
-  placeTurret();
+  followMouse();
   
 }
