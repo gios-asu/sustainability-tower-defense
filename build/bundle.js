@@ -10300,7 +10300,6 @@
 	    // draw first level path design
 	    document.getElementById('bgimg').style.display = 'none';
 	    document.getElementById('lv1').style.display = 'block';
-	    document.getElementById('turret').style.display = 'block';
 	    // Get a reference to the canvas object
 	    paper.install(window);//needed to do animiation
 	    //var canvas = document.getElementById('myCanvas');

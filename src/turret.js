@@ -7,11 +7,13 @@ function placeTurret(x, y) {
 }
 
 function followMouse() {
+  
   var map = document.getElementById('lv1bgimg');
   var r = map.getBoundingClientRect();
   $(document).mousemove(function (e) {
     if (e.pageX > r.left && e.pageX < r.right && e.pageY > r.top && e.pageY < r.bottom) {
-      $("#turret").css({left: e.pageX-75, top: e.pageY-75});
+      document.getElementById('range').style.display = 'block';
+      $("#range").css({left: e.pageX-75, top: e.pageY-75});
     }
   });
   
