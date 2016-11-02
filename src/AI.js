@@ -134,5 +134,5 @@ function main() {//everything goes here
   path1();//draw path
   makeCircle(startx[0],starty[0]);//make obj
   followPath(enemy,0);//move obj
-  followMouse(); 
+  //followMouse(); 
 }

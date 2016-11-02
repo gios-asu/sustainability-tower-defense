@@ -72,6 +72,7 @@
     border: 1px solid black;
     background-color: greenyellow;
     display: inline-block;
+    position: absolute;
 }
 
 #itemUp{
@@ -84,10 +85,10 @@
     width: 150px;
     height: 50px;
     background-color: blue;
-    margin: 500px 0px;
+    margin: 472px 0px;
 }
 
-#turret{
+#range{
   border-radius: 50%;
   width: 150px;
   height: 150px;
