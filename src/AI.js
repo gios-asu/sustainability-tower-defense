@@ -59,7 +59,7 @@ function makeCircle(start, end) {
     center: [start, end],
     radius: 20,
     fillColor: 'blue'
-    });
+  });
 }
 
 ////AI path following
@@ -69,29 +69,28 @@ function followPath(obj, st) {//(moving obj, st holds array index value)
   var dx = 0, dy=0;
   
   if (endx[st] - startx[st] != 0 && endy[st] -starty[st] == 0) {
-       //move horizontal
-      dx = (endx[st] - obj.position.x) / steps; //endpoint - obj position
-      view.onFrame = function(event) {    
-        // do the movement
-        if(obj.position.x != endx[st]){
-           obj.position.x += dx;
-        }
-         
-        else {
-          var check = st + 1;
-          if (check <= startx.length-1) {
-            //waits until animation comes to a stop to recursively call
-            st++;
-            followPath(obj,st);
-          }
-        }     
+    //move horizontal
+    dx = (endx[st] - obj.position.x) / steps; //endpoint - obj position
+    view.onFrame = function() {    
+      // do the movement
+      if(obj.position.x != endx[st]){
+        obj.position.x += dx;
       }
+      else {
+        var check = st + 1;
+        if (check <= startx.length-1) {
+          //waits until animation comes to a stop to recursively call
+          st++;
+          followPath(obj,st);
+        }
+      }     
+    }
   }
   //move vertical
   else if(endy[st] - starty[st] != 0 && endx[st] - startx[st] == 0) {
         //move vert
       dy = (endy[st] - obj.position.y)/steps; //endpoint - obj position
-      view.onFrame = function(event) {    
+      view.onFrame = function() {    
           // do the movement
         if(obj.position.y != endy[st]) {
           obj.position.y += dy;
@@ -110,8 +109,8 @@ function followPath(obj, st) {//(moving obj, st holds array index value)
   else {//move diagonal
     dx = (endx[st] - obj.position.x)/steps; //endpoint - obj position
     dy = (endy[st] - obj.position.y)/steps; //endpoint - obj position
-    view.onFrame = function(event) {    
-          // do the movement
+    view.onFrame = function() {    
+      // do the movement
       if(obj.position.y != endy[st]) {
         obj.position.y += dy;
         obj.position.x += dx;
