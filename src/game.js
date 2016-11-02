@@ -2,9 +2,8 @@ var $ = require("jquery");
 var game_state = require("./game_state.js");
 
 //$.getScript("./AI.js");
-$(".hello_text").html(game_state.sayHelloInEnglish());
-$(".button").click(function(){
-    game_state.clickFunc();
+$(".button").click(function() {
+  game_state.clickFunc();
 });
 
 

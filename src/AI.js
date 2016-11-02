@@ -1,9 +1,8 @@
-var square, circle, line, line2, line3, start;
+var line, line2, line3, start;
 var startx = [], starty = [], endx = [], endy = [];//array to keep track of point location 
 
 function path1() {
-    	
-    // Create a Paper.js Path to draw a line into it:
+  // Create a Paper.js Path to draw a line into it:
   startx.push(0);
   starty.push(400);
   endx.push(700);
@@ -140,10 +139,8 @@ function followPath(obj, st){//(moving obj, st holds array index value)
 
 function main()//everything goes here
 {
-    
   path1();//draw path
   makeCircle(startx[0],starty[0]);//make obj
   followPath(enemy,0);//move obj
-  followMouse();
-  
+  followMouse(); 
 }

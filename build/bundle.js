@@ -48,9 +48,8 @@
 	var game_state = __webpack_require__(2);
 
 	//$.getScript("./AI.js");
-	$(".hello_text").html(game_state.sayHelloInEnglish());
-	$(".button").click(function(){
-	    game_state.clickFunc();
+	$(".button").click(function() {
+	  game_state.clickFunc();
 	});
 
 
@@ -10297,28 +10296,19 @@
 	
 
 	module.exports = {
-	  sayHelloInEnglish: function() {
-	    return "HELLO";
-	  },
-
-	  sayHelloInSpanish: function() {
-	    return "Hola";
-	  },
-	 
-	clickFunc: function(){// draw first level path design
+	  clickFunc: function() {
+	    // draw first level path design
 	    document.getElementById('bgimg').style.display = 'none';
 	    document.getElementById('lv1').style.display = 'block';
 	    document.getElementById('turret').style.display = 'block';
-	        // Get a reference to the canvas object
-	        paper.install(window);//needed to do animiation
-			//var canvas = document.getElementById('myCanvas');
-			paper.setup("myCanvas");
-	        main();
-			// Draw the view now:
-	    
-			//paper.view.draw();
-		
-	   }
+	    // Get a reference to the canvas object
+	    paper.install(window);//needed to do animiation
+	    //var canvas = document.getElementById('myCanvas');
+	    paper.setup("myCanvas");
+	    main();
+	    // Draw the view now:
+	    //paper.view.draw();
+		}
 
 	};
 
