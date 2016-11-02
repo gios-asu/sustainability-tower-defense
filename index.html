@@ -1,17 +1,56 @@
 <html>
   <head>
+   <!-- <script type="text/javascript" src="src/paper-full.js"></script>-->
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script type ='text/javascript' src= "src/paper-full.js"> </script>
   </head>
+  
   <body>
-    <h1 class="game-title">this is the game</h1>
-    <div class="hello_text"></div>
-
-    <img src="img/nailed-it.gif" alt="bingo"/>
-
+    
+   <h1 class="game-title">Earth Defender</h1>
+     
+     <div id = "bgimg"> 
+      <button class ="button"> <span>Start</span></button>
+         
+      </div>
+      
+    
+    <!--------------------------------- level 1 ----------------------------------->
+      <center>
+          <div id = 'lv1' style = "display:none">
+              <div id ='lv1bgimg'>
+                 <canvas id="myCanvas" width="800px" height="600px"></canvas>
+                <img id = "range" src="img/turret.jpg"/ style="display:none">
+              </div>
+              
+              
+              <div id='items'>
+                  
+                  <div id = 'itemUp'>
+                  </div>
+                  
+                <button id = 'turretBT' onclick="followMouse()">first</button>
+                  
+                  
+                  <div id= 'itemDown'>
+                      
+                  </div>
+                
+              </div>
+              
+          </div>
+      </center>
+    <!-- <img src="img/nailed-it.gif" alt="bingo"/>  -->
+    <script type="text/javascript" src="src/turret.js"></script>
+    <script type="text/javascript" src="src/AI.js"></script>
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="build/bundle.js" charset="utf-8"></script>
+
+
+    
+      
   </body>
 </html>
