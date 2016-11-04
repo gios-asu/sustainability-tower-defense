@@ -10,10 +10,8 @@ module.exports = {
     //var canvas = document.getElementById('myCanvas');
     paper.setup("myCanvas");
     main();
+    initFiring();
     // Draw the view now:
     //paper.view.draw();
   }
 };
-
-
-

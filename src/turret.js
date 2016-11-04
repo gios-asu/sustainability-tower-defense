@@ -1,9 +1,16 @@
+var turrets = [];
+
 function placeTurret(x, y) {
-  var turret = new Path.Circle({
+  var newTurret = new Path.Circle({
     center : [x, y],
     radius : 20,
     fillColor : 'blue'
   });
+  
+  turrets.push(newTurret);
+  
+  turrets.forEach(dist);
+  
 }
 
 function followMouse() {
