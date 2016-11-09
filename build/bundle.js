@@ -47,8 +47,20 @@
 	var $ = __webpack_require__(1);
 	var game_state = __webpack_require__(2);
 
+	//$.getScript("./AI.js");
+	$(".button").click(function() {
+	  game_state.clickFunc();
+	});
 
-	$(".hello_text").html(game_state.sayHelloInEnglish());
+
+
+
+
+
+
+
+	/*var background = new Raster("img/bg1.jpg", [400, 300]);
+	background.position = view.center;*/
 
 
 /***/ },
@@ -10281,13 +10293,21 @@
 /* 2 */
 /***/ function(module, exports) {
 
-	module.exports = {
-	  sayHelloInEnglish: function() {
-	    return "HELLO";
-	  },
+	
 
-	  sayHelloInSpanish: function() {
-	    return "Hola";
+	module.exports = {
+	  clickFunc: function() {
+	    // draw first level path design
+	    document.getElementById("bgimg").style.display = "none";
+	    document.getElementById("lv1").style.display = "block";
+	    // Get a reference to the canvas object
+	    paper.install(window);//needed to do animiation
+	    //var canvas = document.getElementById('myCanvas');
+	    paper.setup("myCanvas");
+	    main();
+	    initFiring();
+	    // Draw the view now:
+	    //paper.view.draw();
 	  }
 	};
 
