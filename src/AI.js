@@ -1,5 +1,6 @@
 var line, line2, line3, start;
-var startx = [], starty = [], endx = [], endy = [];//array to keep track of point location 
+var startx = [], starty = [], endx = [], endy = [];//array to keep track of point location
+var enemies = [];
 
 function path1() {
   // Create a Paper.js Path to draw a line into it:
@@ -60,6 +61,8 @@ function makeCircle(start, end) {
     radius: 20,
     fillColor: 'blue'
   });
+  
+  enemies.push(enemy);
 }
 
 ////AI path following
