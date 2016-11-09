@@ -92,6 +92,7 @@ function followPath(obj, st) {//(moving obj, st holds array index value)
   //move vertical
   else if(endy[st] - starty[st] != 0 && endx[st] - startx[st] == 0) {
         //move vert
+      steps = 50;
       dy = (endy[st] - obj.position.y)/steps; //endpoint - obj position
       view.onFrame = function() {    
           // do the movement
@@ -100,13 +101,16 @@ function followPath(obj, st) {//(moving obj, st holds array index value)
         }
           
         else {
-            var check = st+1;
-            if(check <=startx.length-1) {
+          var check = st+1;
+          if(check <=startx.length-1) {
               //waits until animation comes to a stop to recursively call
-              st++;
-              followPath(obj,st);
-            }
-          }   
+            st++;
+            followPath(obj,st);
+          }
+          else{
+            reduceHP();//enemy hit the end of path. reduce hp
+          }
+        }   
       }
     }
   else {//move diagonal
@@ -124,8 +128,13 @@ function followPath(obj, st) {//(moving obj, st holds array index value)
           st++;
           followPath(obj,st);
         }
-        else {
-                //send some msg let system know an enemy breached the gates
+        else {//end of path
+          //ghetto spawner
+          enemy.remove();
+          makeCircle(startx[0],starty[0]);//make obj
+          followPath(enemy,0);
+          //ghetto spawner ^
+          reduceHP();//enemy hit the end of path. reduce hp
         }
       }   
     }

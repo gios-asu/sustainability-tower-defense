@@ -10,7 +10,7 @@
   
   <body>
     
-   <h1 class="game-title">Earth Defender</h1>
+   <h1 class="game-title">Sustain It!</h1>
      
      <div id = "bgimg"> 
       <button class ="button"> <span>Start</span></button>
@@ -30,6 +30,9 @@
               <div id='items'>
                   
                   <div id = 'itemUp'>
+                    <label for="qty"><b><abbr title="Quantity">Health</abbr></b></label>
+                    <!-- health stuff -->
+                   <p> <b><a id="health">100</a></b></p>
                   </div>
                   
                 <button id = 'turretBT' onclick="followMouse()">first</button>
@@ -44,6 +47,7 @@
           </div>
       </center>
     <!-- <img src="img/nailed-it.gif" alt="bingo"/>  -->
+    <script type="text/javascript" src="src/health.js"></script>
     <script type="text/javascript" src="src/turret.js"></script>
     <script type="text/javascript" src="src/AI.js"></script>
     <script type="text/javascript" src="src/firing.js"></script>
