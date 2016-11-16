@@ -10301,9 +10301,9 @@
 	    document.getElementById("bgimg").style.display = "none";
 	    document.getElementById("lv1").style.display = "block";
 	    // Get a reference to the canvas object
-	    paper.install(window);//needed to do animiation
+	    /*paper.install(window);//needed to do animiation
 	    //var canvas = document.getElementById('myCanvas');
-	    paper.setup("myCanvas");
+	    paper.setup("myCanvas");*/
 	    main();
 	    initFiring();
 	    // Draw the view now:

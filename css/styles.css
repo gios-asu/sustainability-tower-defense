@@ -57,10 +57,11 @@
 
 
 #lv1bgimg{
+    position: relative;
     width: 800px;
     height: 600px;
     border: 1px solid black;
-    //background-image: url('../img/bg2.jpg');
+    /*background-image: url('../img/bg2.jpg');*/
     background-color: azure;
     display: inline-block;
     margin:auto;
@@ -94,4 +95,27 @@
   height: 150px;
   opacity: 0.3;
   position: absolute;
+}
+
+/* enemies */
+
+.enemy {
+  position: absolute;
+}
+
+.enemy1 {
+  background-color: blue;
+  height: 32px;
+  width: 32px;
+}
+
+.enemy2 {
+  background-color: red;
+  height: 40px;
+  width: 40px;
+}
+
+.level1 {
+  top: 500px;
+  left: 0;
 }

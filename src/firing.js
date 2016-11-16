@@ -32,8 +32,8 @@ function dist(x1, y1, x2, y2) {
 
 function initFiring() {
   
-  var firingTimer = setInterval(function() {
+  /*var firingTimer = setInterval(function() {
     enemies.forEach(fire);
-  }, 5);
+  }, 5);*/
   
 }
