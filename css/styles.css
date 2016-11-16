@@ -55,6 +55,12 @@
     margin: auto;
 }
 
+#lv1 {
+  text-align: center;
+  width: 975px;
+  margin-left: calc(100vw - 950px - (100vw - 950px) / 2)
+}
+
 
 #lv1bgimg{
     position: relative;
@@ -64,7 +70,6 @@
     /*background-image: url('../img/bg2.jpg');*/
     background-color: azure;
     display: inline-block;
-    margin:auto;
 }
 
 #items{
@@ -73,7 +78,8 @@
     border: 1px solid black;
     background-color: greenyellow;
     display: inline-block;
-    position: absolute;
+    position: relative;
+  float: right;
 }
 
 #itemUp{
@@ -114,6 +120,12 @@
   height: 40px;
   width: 40px;
 }
+
+/*.enemy3 {
+  background-color: black;
+  height: 44px;
+  width: 44px;
+}*/
 
 .level1 {
   top: 500px;
