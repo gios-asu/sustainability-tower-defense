@@ -5,7 +5,7 @@ var level1Speed = [1, 1.5]; // the speed for all enemies
 
 // Spawning info
 var level1Enemies = [1, 1, 2, 2]; // the sequence of enemies to be generated
-var level1Times = [5, 3, 1]; // the sequence of times in seconds in between each enemy generation. The first number determines how long a wait there is before the first enemy is spawned.
+var level1Times = [5, 3, 1, 1]; // the sequence of times in seconds in between each enemy generation. The first number determines how long a wait there is before the first enemy is spawned.
 
 var controller = new Object(); // an object to control all global game vars
 controller.health = 100;
