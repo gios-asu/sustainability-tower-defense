@@ -5,7 +5,7 @@ var level1Speed = [1, 1.5]; // the speed for all enemies
 
 // Spawning info
 var level1Enemies = [1, 1, 2, 2]; // the sequence of enemies to be generated
-var level1Times = [5, 3, 1, 1]; // the sequence of times in seconds in between each enemy generation. The first number determines how long a wait there is before the first enemy is spawned.
+var level1Times = [3, 5, 3, 0.5]; // the sequence of times in seconds in between each enemy generation. The first number determines how long a wait there is before the first enemy is spawned.
 
 var controller = new Object(); // an object to control all global game vars
 controller.health = 100;
@@ -41,18 +41,19 @@ function level1Path(num) {
 }
 
 function level1() {
+  //$('#timer').html(level1Times[num]);
   makeEnemy(level1Enemies[num], 1);
-
-  var creationTimer = setInterval(function() {
-    num += 1;
-    makeEnemy(level1Enemies[num], 1);
-    if (num > level1Times.length) {
-      clearInterval(creationTimer);
-    }
-  }, level1Times[num]*1000);
-  
+  num += 1;
+  if (num < level1Times.length) {
+    setTimeout(level1, level1Times[num]*1000);
+  }
+    
 }
 
 function main() {
-  level1(); 
+  if (level1Enemies.length != level1Times.length) {
+    alert("DEV ERR: You need to have an equal number of times as you do enemies!");
+  } else {
+    setTimeout(level1, level1Times[num]*1000);
+  }
 }
