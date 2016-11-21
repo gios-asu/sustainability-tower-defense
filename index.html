@@ -1,17 +1,60 @@
 <html>
   <head>
+   <!-- <script type="text/javascript" src="src/paper-full.js"></script>-->
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  </head>
-  <body>
-    <h1 class="game-title">this is the game</h1>
-    <div class="hello_text"></div>
-
-    <img src="img/nailed-it.gif" alt="bingo"/>
-
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+  </head>
+  
+  <body>
+    
+   <h1 class="game-title">Sustain It!</h1>
+     
+     <div id = "bgimg"> 
+      <button class ="button"> <span>Start</span></button>
+         
+      </div>
+      
+    
+    <!--------------------------------- level 1 ----------------------------------->
+      <div class="text-align: center;">
+          <div id = 'lv1' style = "display:none">
+              <div id ='lv1bgimg'>
+                
+                <img id = "range" src="img/turret.jpg"/ style="display:none">
+              </div>
+              
+              
+              <div id='items'>
+                  
+                  <div id = 'itemUp'>
+                    <label for="qty"><b><abbr title="Quantity">Health</abbr></b></label>
+                    <!-- health stuff -->
+                   <p> <strong id="health">100</strong>&nbsp;&nbsp;<strong id="timer"></strong></p>
+                  </div>
+                  
+                <button id = 'turretBT' onclick="followMouse()">first</button>
+                  
+                  
+                  <div id= 'itemDown'>
+                      
+                  </div>
+                
+              </div>
+              
+          </div>
+      </div>
+    <!-- <img src="img/nailed-it.gif" alt="bingo"/>  -->
+    <script type="text/javascript" src="src/health.js"></script>
+    <script type="text/javascript" src="src/turret.js"></script>
+    <script type="text/javascript" src="src/AI.js"></script>
+    <script type="text/javascript" src="src/firing.js"></script>
     <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="build/bundle.js" charset="utf-8"></script>
+
+
+    
+      
   </body>
 </html>
