@@ -1,4 +1,155 @@
-/** CSS styles */
+/* CSS styles */
 .game-title {
-  color: red;
+    color: red;
+    font-family: papyrus;
+    font-style: italic;
+    font-size: 70px;
+    text-align: center;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 300px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+#bgimg {
+    width: 800px;
+    height: 600px;
+    border: 1px solid black;
+    background-image: url('../img/bg3.png');
+    margin: auto;
+}
+
+#lv1 {
+  text-align: center;
+  width: 975px;
+  margin-left: calc(100vw - 950px - (100vw - 950px) / 2)
+}
+
+
+#lv1bgimg{
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 1px solid black;
+    /*background-image: url('../img/bg2.jpg');*/
+    background-color: azure;
+    display: inline-block;
+}
+
+#items{
+    width: 150px;
+    height: 600px;
+    border: 1px solid black;
+    background-color: greenyellow;
+    display: inline-block;
+    position: relative;
+  float: right;
+}
+
+#itemUp{
+    width: 150px;
+    height: 50px;
+    background-color: blue;
+}
+
+#itemDown{
+    width: 150px;
+    height: 50px;
+    background-color: blue;
+    margin: 472px 0px;
+}
+
+#range{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  opacity: 0.3;
+  position: absolute;
+}
+
+.blocker {
+  position: absolute;
+  background-color: green;
+}
+
+/* enemies */
+
+.enemy {
+  position: absolute;
+  background-size: cover;
+  background-color: transparent;
+}
+
+.enemy1 {
+  background-color: blue;
+  height: 32px;
+  width: 32px;
+}
+
+.enemy2 {
+  background-color: red;
+  height: 40px;
+  width: 40px;
+}
+
+/*.enemy3 {
+  background-color: black;
+  height: 44px;
+  width: 44px;
+}*/
+
+.level1 {
+  top: 500px;
+  left: 0;
+}
+
+/* turrets */
+
+.turret {
+  position: absolute;
+  background-size: cover;
+  background-color: transparent;
+}
+
+.turret1 {
+  background-color: green;
+  border-radius: 20px; /* make it round */
+  height: 32px;
+  width: 32px;
 }
