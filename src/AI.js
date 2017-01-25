@@ -8,7 +8,7 @@ var level1Enemies = [1, 1, 2, 2]; // the sequence of enemies to be generated
 var level1Times = [3, 3, 4, 1]; // the sequence of times in seconds in between each enemy generation. The first number determines how long a wait there is before the first enemy is spawned.
 
 // Path info
-var level1PathObj = [{x: 0, y: 500}, {x: 200, y: 500}, {x: 200, y: 200}, {x: 0, y: 0}];
+var level1PathObj = [{x: 0, y: 55}, {x: 55, y: 55}, {x: 55, y: 470}, {x: 505, y: 470}, {x: 505, y: 230}, {x: 800, y: 230}];
 
 var controller = new Object(); // an object to control all global game vars
 controller.health = 100;

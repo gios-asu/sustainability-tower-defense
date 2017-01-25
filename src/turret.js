@@ -18,7 +18,7 @@ function place(type, id) {
 $('#lv1bgimg').click(function() {
   if (placing != "0" && placeable == true) {
     $(this).append('<div id="turret' + numTurrets + '" class="turret ' + placing + ' level1" data-num="' + numTurrets + '" data-damage="' + level1TDamage[placingID - 1] + '" data-range="' + level1TRange[placingID - 1] + '" data-rate="' + level1TRate[placingID - 1] + '">');
-    $('#turret' + numTurrets).css('left', cursorX(event) - 194).css('top', cursorY(event) - 36);
+    $('#turret' + numTurrets).css('left', cursorX(event) - 194).css('top', cursorY(event) - 124);
     placing = "0";
     placingID = -1;
     $('#lv1bgimg').css('cursor', 'default');
