@@ -67,7 +67,7 @@
     width: 800px;
     height: 600px;
     border: 1px solid black;
-    /*background-image: url('../img/bg2.jpg');*/
+    background-image: url('../img/level1bg.jpg');
     background-color: azure;
     display: inline-block;
 }
@@ -103,10 +103,17 @@
   position: absolute;
 }
 
+.blocker {
+  position: absolute;
+  background-color: green;
+}
+
 /* enemies */
 
 .enemy {
   position: absolute;
+  background-size: cover;
+  background-color: transparent;
 }
 
 .enemy1 {
@@ -128,6 +135,21 @@
 }*/
 
 .level1 {
-  top: 500px;
+  top: 55px;
   left: 0;
+}
+
+/* turrets */
+
+.turret {
+  position: absolute;
+  background-size: cover;
+  background-color: transparent;
+}
+
+.turret1 {
+  background-color: green;
+  border-radius: 20px; /* make it round */
+  height: 32px;
+  width: 32px;
 }

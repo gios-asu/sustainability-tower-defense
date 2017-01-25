@@ -1,32 +1,39 @@
-var turrets = [];
+// Enemy info
+var level1TDamage = [10]; // the damage for all turrets
+var level1TRange = [200]; // the range for all turrets
+var level1TRate = [1]; // time in between shots for turrets in seconds
 
-function placeTurret(x, y) {
-  var newTurret = new Path.Circle({
-    center : [x, y],
-    radius : 20,
-    fillColor : 'blue'
-  });
-  
-  turrets.push(newTurret);
-  
-  turrets.forEach(dist);
+var placing = "0"; // default, means we aren't placing anything
+var placingID = -1;
+var placeable = true;
+var numTurrets = 0; // number of turrets on map
+
+function place(type, id) {
+  placing = type;
+  placingID = id;
+  $('#lv1bgimg').css('cursor', 'url(img/placement/' + type + '.png) 16 16, auto');
   
 }
 
-function followMouse() {
-  
-  var map = document.getElementById('lv1bgimg');
-  var r = map.getBoundingClientRect();
-  $(document).mousemove(function (e) {
-    if (e.pageX > r.left && e.pageX < r.right && e.pageY > r.top && e.pageY < r.bottom) {
-      document.getElementById('range').style.display = 'block';
-      $("#range").css({left: e.pageX-75, top: e.pageY-75});
-    }
-  });
-  
-  $(document).mousedown(function (e) {  
-    if (e.pageX > r.left && e.pageX < r.right && e.pageY > r.top && e.pageY < r.bottom) {
-      placeTurret(e.pageX - r.left, e.pageY - r.top);
-    }
-  });
+$('#lv1bgimg').click(function() {
+  if (placing != "0" && placeable == true) {
+    $(this).append('<div id="turret' + numTurrets + '" class="turret ' + placing + ' level1" data-num="' + numTurrets + '" data-damage="' + level1TDamage[placingID - 1] + '" data-range="' + level1TRange[placingID - 1] + '" data-rate="' + level1TRate[placingID - 1] + '">');
+    $('#turret' + numTurrets).css('left', cursorX(event) - 194).css('top', cursorY(event) - 124);
+    placing = "0";
+    placingID = -1;
+    $('#lv1bgimg').css('cursor', 'default');
+    numTurrets += 1;
+  }
+});
+
+/* fix */
+
+
+
+function cursorX(event) {
+  return event.clientX;
+}
+
+function cursorY(event) {
+  return event.clientY;
 }
