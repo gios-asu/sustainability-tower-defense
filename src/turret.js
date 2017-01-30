@@ -8,6 +8,14 @@ var placingID = -1;
 var placeable = true;
 var numTurrets = 0; // number of turrets on map
 
+$("#turretBT").mouseover(function(){
+    $('.description').show();
+});
+
+$("#turretBT").mouseleave(function(){
+    $('.description').hide();
+});
+
 function place(type, id) {
   placing = type;
   placingID = id;
