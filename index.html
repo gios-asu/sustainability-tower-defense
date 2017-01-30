@@ -12,11 +12,31 @@
    <h1 class="game-title">Sustain It!</h1>
      
      <div id = "bgimg"> 
-      <button class ="button"> <span>Start</span></button>
-         
+      <button class ="button" id = "buttonStart"> <span>Start</span></button>
+      <button class ="button" id = "buttonInfo"> <span>Info</span></button>  
+      <button class ="button" id = "buttonExtra"> <span>stuff</span></button>
       </div>
       
-    
+      <!--------------------------------INFO STUFF----------------------------------->
+      <div class="text-align: center;">
+        
+          <div id = 'infoPage' style = "display:none">
+              <div id ='bgimgInfo'>
+                <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn" onclick="drop()">Dropdown</a>
+                    <div class="dropdown-content" id="myDropdown">
+                      <a href="#">How To Play</a>
+                      <a href="#">About Sustainability</a>
+                      <a href="#">Credits</a>
+                    </div>
+                  </li>
+                </ul>
+               
+              </div>       
+          </div>
+      </div>
     <!--------------------------------- level 1 ----------------------------------->
       <div class="text-align: center;">
           <div id = 'lv1' style = "display:none">
@@ -44,6 +64,7 @@
               
           </div>
       </div>
+    <script type="text/javascript" src="src/dropButton.js"></script>
     <script type="text/javascript" src="src/health.js"></script>
     <script type="text/javascript" src="src/turret.js"></script>
     <script type="text/javascript" src="src/AI.js"></script>
