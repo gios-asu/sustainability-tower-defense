@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
   </head>
   
@@ -45,20 +46,25 @@
               </div>
               
               
-              <div id='items'>
+              <div id='sidebar'>
                   
-                  <div id = 'itemUp'>
+                  <div id = 'playerInfo'>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
                     <label for="qty"><b><abbr title="Quantity">Health</abbr></b></label>
+                      
                     <!-- health stuff -->
                    <p> <strong id="health">100</strong>&nbsp;&nbsp;<strong id="timer"></strong></p>
                   </div>
                   
-                <button id = 'turretBT' onclick="place('turret1', 1)">first</button>
+                
+                  <i class="fa fa-usd fa-2x" style = "width: 100%" aria-hidden="true"></i>
+                  <ul class = "turrets">
+                      <li>  <button id = 'turretBT' onclick="place('turret1', 1)">first</button> </li>
+                      <li>  <button id = 'turretBT2' onclick="place('turret1', 1)">second</button> </li>
+                      <li>  <button id = 'turretBT3' onclick="place('turret1', 1)">third</button> </li>
+                      <li>  <button id = 'turretBT4' onclick="place('turret1', 1)">fourth</button> </li>
+                  </ul>
                   
-                  
-                  <div id= 'itemDown'>
-                      
-                  </div>
                 
               </div>
               
