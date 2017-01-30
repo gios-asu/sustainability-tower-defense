@@ -24,13 +24,13 @@
           <div id = 'infoPage' style = "display:none">
               <div id ='bgimgInfo'>
                 <ul class="ulInfo">
-                  <li class="a"><a href="#home">Home</a></li>
+                  <li class="a"><a href="#home" id="backHome">Home</a></li>
                   <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn" onclick="drop()">Dropdown</a>
+                    <a href="#drop" class="dropbtn" id="dropB">Dropdown</a>
                     <div class="dropdown-content" id="myDropdown">
-                      <a href="#">How To Play</a>
-                      <a href="#">About Sustainability</a>
-                      <a href="#">Credits</a>
+                      <a href="#howToPlay">How To Play</a>
+                      <a href="#about">About Sustainability</a>
+                      <a href="#credits">Credits</a>
                     </div>
                   </li>
                 </ul>
@@ -70,7 +70,6 @@
               
           </div>
       </div>
-    <script type="text/javascript" src="src/dropButton.js"></script>
     <script type="text/javascript" src="src/health.js"></script>
     <script type="text/javascript" src="src/turret.js"></script>
     <script type="text/javascript" src="src/AI.js"></script>
