@@ -155,6 +155,7 @@ li.dropdown {
   float: right;
 }
 
+/*------------sidebar-------------turrets button-----------*/
 .turrets{
     padding-left: 0;
     list-style: none;
@@ -162,16 +163,28 @@ li.dropdown {
 }
 
 .turrets li{
-    padding-bottom: 20;
+    padding-top: 10;
+    padding-bottom: 10;
+    position: relative;
+}
+
+#turretBT{
+    width: 32px;
+    height: 32px;
+    margin: auto;
+    background-image: url(/img/bubble.png);
+    background-size: contain;
 }
 
 .description{
     border: 1px solid black;
     width: 200px;
     height: 200px;
-    z-index: 2;
     opacity: 0.5;
     display: none;
+    background: black;
+    color: lightcoral;
+    position: absolute;
 }
 
 #playerInfo{
@@ -233,7 +246,7 @@ li.dropdown {
 }
 
 .turret1 {
-  background-color: green;
+  background-image: url(/img/bubble.png);
   border-radius: 20px; /* make it round */
   height: 32px;
   width: 32px;
