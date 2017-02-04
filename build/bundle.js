@@ -74,6 +74,24 @@
 	 document.getElementById("myDropdown").classList.toggle("show");
 	});
 
+	//INFO PAGE STUFF///
+	$("#howToPlay").click(function() {
+	  $("#infoTitle").text("How To Play");
+	 $("#infoText").text(" Controls: \n P - Pause \n\n <b>Objectives: \n Kill stuff ");
+	});
+
+	$("#aboutSus").click(function() {
+	  $("#infoTitle").text("About Sustainability");
+	  $("#infoText").text("Sustainability info stuff ");
+	});
+
+	$("#credits").click(function() {
+	  $("#infoTitle").text("Credits");
+	  $("#infoText").text("Daniel: stuff \n Jason: things \n Sam: rest of stuff\n ");
+
+	});
+	//////////////////
+
 
 /***/ },
 /* 1 */
