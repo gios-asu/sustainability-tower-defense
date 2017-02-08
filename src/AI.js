@@ -117,7 +117,6 @@ function blockPath() {
 function main() {
   //Pause game stuff ////////////
   $(document).bind("keydown", function(e){
-    console.log(e);
     if(e.keyCode == 80){// P key
       
       if(document.getElementById("pauseMenu").style.visibility == "hidden"){
