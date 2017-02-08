@@ -135,6 +135,7 @@ function main() {
         document.getElementById("bgimg").style.display = "block";
         document.getElementById("lv1").style.display = "none";
         paused = false;
+        window.location.reload();
       }
   });
   ////pause game stuff ^////////
