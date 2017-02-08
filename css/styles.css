@@ -172,7 +172,7 @@ li.dropdown {
     width: 32px;
     height: 32px;
     margin: auto;
-    background-image: url(/img/bubble.png);
+    background-image: url(../img/bubble.png);
     background-size: contain;
 }
 
@@ -240,14 +240,28 @@ li.dropdown {
 /* turrets */
 
 .turret {
-  position: absolute;
-  background-size: cover;
-  background-color: transparent;
+    position: absolute;
+    background-size: cover;
+    background-color: transparent;
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .turret1 {
-  background-image: url(/img/bubble.png);
-  border-radius: 20px; /* make it round */
-  height: 32px;
-  width: 32px;
+    background-image: url(../img/bubble.png);
+    border-radius: 20px; /* make it round */
+    height: 32px;
+    width: 32px;
 }
