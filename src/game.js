@@ -7,8 +7,6 @@ $("#buttonStart").click(function() {
 });
 
 $("#buttonInfo").click(function() {//change background to info background
-  //document.getElementById("bgimg").style.backgroundImage = "url('../img/bgInfo.jpg')";
-  //$(".button").hide();
   document.getElementById("bgimg").style.display = "none";
   document.getElementById("infoPage").style.display = "block";
 });

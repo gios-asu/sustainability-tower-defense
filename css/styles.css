@@ -61,14 +61,22 @@
   right: 0;
 }
 
-/*.........INFO PAGE...................*/
+/*.........Pause menu...................*/
+#pauseMenu{
+    width:800px;
+    height:600px;
+    background:#000000;
+    opacity: .5
+      
+}
+#pauseText{
+  font-size: 60px
+}
+#pauseInfoText{
+  font-size: 30px
+}
 
-
-
-
-
-
-/*.........INFO PAGE...................*/
+/*.........Pause menu...................*/
 #bgimg {
     width: 800px;
     height: 600px;

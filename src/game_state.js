@@ -6,8 +6,8 @@ module.exports = {
     document.getElementById("bgimg").style.display = "none";
     document.getElementById("lv1").style.display = "block";
 
-    main();
-    initFiring();
+    main(); //AI.js
+    //initFiring();
 
   }
 };
