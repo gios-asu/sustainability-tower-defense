@@ -40,12 +40,12 @@ $('#lv1bgimg').mousemove(function(event) {
     var y = event.pageY - $('#lv1bgimg').offset().top;
     var yy = Math.floor(y / 40);
     
-    $('.gridslot').css('left', xx * 40 + $('#lv1bgimg').offset().left).css('top', yy * 40 + $('#lv1bgimg').offset().top);
+    $('.gridslot').css('left', xx * 40 + $('#lv1bgimg').offset().left  - $(window).scrollLeft()).css('top', yy * 40 + $('#lv1bgimg').offset().top - $(window).scrollTop());
     
     // debugging
    $('.debug').html(xx + ", " + yy);
     
-    if (grid[xx][yy] != "empty" || x < 0 || yy < 0 || xx >= 20 || yy >= 20) {
+    if (grid[xx][yy] != "empty" || xx < 0 || yy < 0 || xx >= 20 || yy >= 20) {
       $('#lv1bgimg').css('cursor', 'url(img/placement/reds/' + placing + '.png) 16 16, auto');
       $('.gridslot').css('background-color', 'rgba(255,0,0,0.5)');
       placeable = false;
