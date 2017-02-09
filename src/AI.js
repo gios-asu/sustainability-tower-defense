@@ -10,6 +10,31 @@ var level1Times = [3, 3, 4, 1]; // the sequence of times in seconds in between e
 // Path info
 var level1PathObj = [{x: 0, y: 55}, {x: 55, y: 55}, {x: 55, y: 470}, {x: 505, y: 470}, {x: 505, y: 230}, {x: 800, y: 230}];
 
+// Populate grid with path
+grid[0][0] = "path";
+grid[0][1] = "path";
+grid[1][1] = "path";
+for (var i = 2; i < 12; i++) {
+  grid[0][i] = "path";
+  grid[1][i] = "path";
+  grid[2][i] = "path";
+}
+for (var i = 2; i < 13; i++) {
+  grid[i][10] = "path";
+  grid[i][11] = "path";
+  grid[i][12] = "path";
+}
+for (var i = 10; i >= 5; i--) {
+  grid[11][i] = "path";
+  grid[12][i] = "path";
+  grid[13][i] = "path";
+}
+for (var i = 13; i < 20; i++) {
+  grid[i][4] = "path";
+  grid[i][5] = "path";
+  grid[i][6] = "path";
+}
+
 var controller = new Object(); // an object to control all global game vars
 controller.health = 100;
 controller.currency = 0;
@@ -119,7 +144,7 @@ function main() {
     alert("DEV ERR: You need to have an equal number of times as you do enemies!");
   } else {
     setTimeout(level1, level1Times[num]*1000);
-    //blockPath(); Save for future version
+    /*blockPath(); Save for future version
     
     $('.blocker').mouseenter(function() {
       if (placing != "0") {
@@ -131,6 +156,6 @@ function main() {
         $('#lv1bgimg').css('cursor', 'url(img/placement/' + placing + '.png) 16 16, auto');
         placeable = true;
       }
-    });
+    });*/
   }
 }
