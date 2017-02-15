@@ -128,13 +128,18 @@ function main() {
         paused = false;
       }
     }
-     if(e.keyCode == 27 && paused)// escape key && currently paused
+     if(paused)//  currently paused
       {
-        document.getElementById("pauseMenu").style.visibility = "hidden";
-        document.getElementById("bgimg").style.display = "block";
-        document.getElementById("lv1").style.display = "none";
-        paused = false;
-        window.location.reload();
+        if(e.keyCode == 27){//escape key 
+           document.getElementById("pauseMenu").style.visibility = "hidden";
+          document.getElementById("bgimg").style.display = "block";
+          document.getElementById("lv1").style.display = "none";
+          paused = false;
+          window.location.reload();
+        }
+        else if(e.keyCode == 73){  // I for information
+          $('#myModal').modal('toggle');//display modal
+        }
       }
   });
   ////pause game stuff ^////////

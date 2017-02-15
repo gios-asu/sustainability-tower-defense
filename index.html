@@ -17,7 +17,7 @@
       <button class ="button" id = "buttonInfo"> <span>Info</span></button>  
       <button class ="button" id = "buttonExtra"> <span>stuff</span></button>
       </div>
-      
+    
       <!--------------------------------INFO STUFF----------------------------------->
       <div class="class1" style="text-align: center;">
         
@@ -62,17 +62,48 @@
       <div class="text-align: center;">
           <div id = 'lv1' style = "display:none">
               <div id ='lv1bgimg'>
-                
+                <!---------------Pause Menu Pop up----------------------->
                 <!--- pause menu stuff-->
                 <div id ="pauseMenu" style="visibility:hidden">
-                  
+                
                     <div id ="pauseText"><b>Paused</b></div>
                  <div id = "pauseInfoText"><b> P - Pause/Unpause
                     <br> Esc - Return to Main Menu
                      <br> I - Information/Help</b></div>   
                 </div>
+                <!---modal stuff------>
+                <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">INFORMATION</h4>
+                    </div>
+                    <div class="modal-body">
+                      <b><i>Sustain It </b></i> is a game that utilizes
+                      the concept of sustainability into a Tower Defense style game.
+                      <p></p>
+                      <p>1. Earn RP (Recycle Points) by successfully destroying enemies with your defenses.</p>
+                      <p>2. You lose Health if an enemy successfully reaches the end of the path</p>
+                      <p>The game ends when:</p>
+                      <ul>
+                      <li>You successfully destroyed all enemies</li>
+                      <li>Your health reaches 0</li>
+                        </ul>
+                      <p><center><b>How To Play</b></center></p>
+                      <p>Click on a turret to place it in an available space on the map</p>
+                        
+                      </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              <!----end modal stuff------->
                 <!--- pause menu stuff-->
-                
               </div>
               
               
