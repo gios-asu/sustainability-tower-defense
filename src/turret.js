@@ -42,14 +42,32 @@ $("#turretBT4").mouseleave(function(){
 
 
 function place(type, id) {
+    var money = parseInt($('.money').text());
+    var cost;
+    switch (id){
+        case 1: 
+            cost = 50;
+            break;
+        case 2: 
+            cost = 100;
+            break;
+    }
+  if(money >= cost){
   placing = type;
   placingID = id;
   $('#lv1bgimg').css('cursor', 'url(img/placement/' + type + '.png) 16 16, auto');
   $('.gridslot').show();
+       money-=50;
+       alert(money);
+       $('.money').text(money.toString());
+   }
+    else{
+        $('#moneyModal').modal('toggle');
+    }
   
 }
 
-$('#lv1bgimg').click(function(event) {
+$('#lv1bgimg').click(function(event) {    
   if (placing != "0" && placeable == true) {
     $(this).append('<div id="turret' + numTurrets + '" class="turret ' + placing + ' level1" data-num="' + numTurrets + '" data-damage="' + level1TDamage[placingID - 1] + '" data-range="' + level1TRange[placingID - 1] + '" data-rate="' + level1TRate[placingID - 1] + '">');
     var x = event.pageX - $('#lv1bgimg').offset().left;

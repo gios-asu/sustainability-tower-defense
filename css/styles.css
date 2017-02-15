@@ -188,12 +188,14 @@
 
 .enemy {
   position: absolute;
-  background-size: cover;
-  background-color: transparent;
+  //background-size: cover;
+  //background-color: transparent;
 }
 
 .enemy1 {
-  background-color: blue;
+  //background-color: blue;
+  background-image: url(../img/oil.png);
+  background-size: contain;
   height: 32px;
   width: 32px;
 }
