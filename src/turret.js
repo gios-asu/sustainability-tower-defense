@@ -16,6 +16,31 @@ $("#turretBT").mouseleave(function(){
     $('.description').hide();
 });
 
+$("#turretBT2").mouseover(function(){
+    $('.description').show();
+});
+
+$("#turretBT2").mouseleave(function(){
+    $('.description').hide();
+});
+
+$("#turretBT3").mouseover(function(){
+    $('.description').show();
+});
+
+$("#turretBT3").mouseleave(function(){
+    $('.description').hide();
+});
+
+$("#turretBT4").mouseover(function(){
+    $('.description').show();
+});
+
+$("#turretBT4").mouseleave(function(){
+    $('.description').hide();
+});
+
+
 function place(type, id) {
   placing = type;
   placingID = id;

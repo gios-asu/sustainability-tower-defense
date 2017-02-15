@@ -156,6 +156,18 @@ li.dropdown {
 }
 
 /*------------sidebar-------------turrets button-----------*/
+.rpSign{
+    background-image: url(../img/RPsign.png);
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    left: 0px;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+
 .turrets{
     padding-left: 0;
     list-style: none;
@@ -177,14 +189,14 @@ li.dropdown {
 }
 
 .description{
-    border: 1px solid black;
-    width: 200px;
-    height: 200px;
+    border: 1px solid red;
+    height: 280px;
     opacity: 0.5;
     display: none;
     background: black;
     color: lightcoral;
     position: absolute;
+    top: 225px;
 }
 
 #playerInfo{
