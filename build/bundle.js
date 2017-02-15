@@ -48,17 +48,30 @@
 	var game_state = __webpack_require__(2);
 
 	//$.getScript("./AI.js");
-	$(".button").click(function() {
+	$("#buttonStart").click(function() {
 	  game_state.clickFunc();
 	});
 
+	$("#buttonInfo").click(function() {//change background to info background
+	  //document.getElementById("bgimg").style.backgroundImage = "url('../img/bgInfo.jpg')";
+	  //$(".button").hide();
+	  document.getElementById("bgimg").style.display = "none";
+	  document.getElementById("infoPage").style.display = "block";
+	});
 
 
+	$("#buttonExtra").click(function() {//change background to other background
+	  
+	});
 
+	$("#back").click(function() {//go back to main menu
+	  document.getElementById("bgimg").style.display = "block";
+	  document.getElementById("infoPage").style.display = "none";
+	});
 
-
-
-
+	/*$("#myDropdown").click(function() {
+	  document.getElementById("myDropdown").classList.toggle("show");
+	});*/
 	/*var background = new Raster("img/bg1.jpg", [400, 300]);
 	background.position = view.center;*/
 
@@ -10300,14 +10313,10 @@
 	    // draw first level path design
 	    document.getElementById("bgimg").style.display = "none";
 	    document.getElementById("lv1").style.display = "block";
-	    // Get a reference to the canvas object
-	    /*paper.install(window);//needed to do animiation
-	    //var canvas = document.getElementById('myCanvas');
-	    paper.setup("myCanvas");*/
+
 	    main();
 	    initFiring();
-	    // Draw the view now:
-	    //paper.view.draw();
+
 	  }
 	};
 
