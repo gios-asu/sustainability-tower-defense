@@ -53,8 +53,6 @@
 	});
 
 	$("#buttonInfo").click(function() {//change background to info background
-	  //document.getElementById("bgimg").style.backgroundImage = "url('../img/bgInfo.jpg')";
-	  //$(".button").hide();
 	  document.getElementById("bgimg").style.display = "none";
 	  document.getElementById("infoPage").style.display = "block";
 	});
@@ -64,16 +62,33 @@
 	  
 	});
 
-	$("#back").click(function() {//go back to main menu
+
+	$("#backHome").click(function() {
 	  document.getElementById("bgimg").style.display = "block";
 	  document.getElementById("infoPage").style.display = "none";
 	});
 
-	/*$("#myDropdown").click(function() {
-	  document.getElementById("myDropdown").classList.toggle("show");
-	});*/
-	/*var background = new Raster("img/bg1.jpg", [400, 300]);
-	background.position = view.center;*/
+	$("#dropB").click(function() {//ignore this function..
+	 document.getElementById("myDropdown").classList.toggle("show");
+	});
+
+	//INFO PAGE STUFF///
+	$("#howToPlay").click(function() {
+	  $("#infoTitle").text("How To Play");
+	 $("#infoText").text(" Controls: \n P - Pause \n\n <b>Objectives: \n Kill stuff ");
+	});
+
+	$("#aboutSus").click(function() {
+	  $("#infoTitle").text("About Sustainability");
+	  $("#infoText").text("Sustainability info stuff ");
+	});
+
+	$("#credits").click(function() {
+	  $("#infoTitle").text("Credits");
+	  $("#infoText").text("Daniel: stuff \n Jason: things \n Sam: rest of stuff\n ");
+
+	});
+	//////////////////
 
 
 /***/ },
@@ -10314,8 +10329,8 @@
 	    document.getElementById("bgimg").style.display = "none";
 	    document.getElementById("lv1").style.display = "block";
 
-	    main();
-	    initFiring();
+	    main(); //AI.js
+	    //initFiring();
 
 	  }
 	};
