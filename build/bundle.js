@@ -48,19 +48,47 @@
 	var game_state = __webpack_require__(2);
 
 	//$.getScript("./AI.js");
-	$(".button").click(function() {
+	$("#buttonStart").click(function() {
 	  game_state.clickFunc();
 	});
 
+	$("#buttonInfo").click(function() {//change background to info background
+	  document.getElementById("bgimg").style.display = "none";
+	  document.getElementById("infoPage").style.display = "block";
+	});
 
 
+	$("#buttonExtra").click(function() {//change background to other background
+	  
+	});
 
 
+	$("#backHome").click(function() {
+	  document.getElementById("bgimg").style.display = "block";
+	  document.getElementById("infoPage").style.display = "none";
+	});
 
+	$("#dropB").click(function() {//ignore this function..
+	 document.getElementById("myDropdown").classList.toggle("show");
+	});
 
+	//INFO PAGE STUFF///
+	$("#howToPlay").click(function() {
+	  $("#infoTitle").text("How To Play");
+	 $("#infoText").text(" Controls: \n P - Pause \n\n <b>Objectives: \n Kill stuff ");
+	});
 
-	/*var background = new Raster("img/bg1.jpg", [400, 300]);
-	background.position = view.center;*/
+	$("#aboutSus").click(function() {
+	  $("#infoTitle").text("About Sustainability");
+	  $("#infoText").text("Sustainability info stuff ");
+	});
+
+	$("#credits").click(function() {
+	  $("#infoTitle").text("Credits");
+	  $("#infoText").text("Daniel: stuff \n Jason: things \n Sam: rest of stuff\n ");
+
+	});
+	//////////////////
 
 
 /***/ },
@@ -10300,14 +10328,10 @@
 	    // draw first level path design
 	    document.getElementById("bgimg").style.display = "none";
 	    document.getElementById("lv1").style.display = "block";
-	    // Get a reference to the canvas object
-	    /*paper.install(window);//needed to do animiation
-	    //var canvas = document.getElementById('myCanvas');
-	    paper.setup("myCanvas");*/
-	    main();
-	    initFiring();
-	    // Draw the view now:
-	    //paper.view.draw();
+
+	    main(); //AI.js
+	    //initFiring();
+
 	  }
 	};
 

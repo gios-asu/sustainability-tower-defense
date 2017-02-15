@@ -115,6 +115,31 @@ function blockPath() {
 }
 
 function main() {
+  //Pause game stuff ////////////
+  $(document).bind("keydown", function(e){
+    if(e.keyCode == 80){// P key
+      
+      if(document.getElementById("pauseMenu").style.visibility == "hidden"){
+        document.getElementById("pauseMenu").style.visibility = "visible";
+        paused = true;
+      }
+      else{
+        document.getElementById("pauseMenu").style.visibility = "hidden";
+        paused = false;
+      }
+    }
+     if(e.keyCode == 27 && paused)// escape key && currently paused
+      {
+        document.getElementById("pauseMenu").style.visibility = "hidden";
+        document.getElementById("bgimg").style.display = "block";
+        document.getElementById("lv1").style.display = "none";
+        paused = false;
+        window.location.reload();
+      }
+  });
+  ////pause game stuff ^////////
+  
+  
   if (level1Enemies.length != level1Times.length) {
     alert("DEV ERR: You need to have an equal number of times as you do enemies!");
   } else {

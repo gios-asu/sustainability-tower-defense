@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
   </head>
   
@@ -12,38 +13,94 @@
    <h1 class="game-title">Sustain It!</h1>
      
      <div id = "bgimg"> 
-      <button class ="button"> <span>Start</span></button>
-         
+      <button class ="button" id = "buttonStart"> <span>Start</span></button>
+      <button class ="button" id = "buttonInfo"> <span>Info</span></button>  
+      <button class ="button" id = "buttonExtra"> <span>stuff</span></button>
       </div>
       
-    
+      <!--------------------------------INFO STUFF----------------------------------->
+      <div class="class1" style="text-align: center;">
+        
+          <div id = 'infoPage' style = "display:none;">
+              <div id ='bgimgInfo'>
+                <nav class="navbar navbar-default">
+                  <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="#" id ="backHome">Home</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navigate <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="#" id ="howToPlay">How To Play</a></li>
+                            <li><a href="#" id ="aboutSus">About Sustainability</a></li>
+                            <li><a href="#" id = "credits">Credits</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div><!-- /.navbar-collapse -->
+                  </div><!-- /.container-fluid -->
+                </nav>
+                <div class="info1" id = "test1">
+                  <h1 id ="infoTitle">How To Play</h1>      
+                  <p class="text-primary" id = "infoText"> <b> Controls:</b> <br> P - Pause <br> <br> <b>Objectives:<br></b>Kill stuff  </p>
+                </div> 
+              </div>       
+          </div>
+      </div>
     <!--------------------------------- level 1 ----------------------------------->
       <div class="text-align: center;">
           <div id = 'lv1' style = "display:none">
               <div id ='lv1bgimg'>
                 
+                <!--- pause menu stuff-->
+                <div id ="pauseMenu" style="visibility:hidden">
+                  
+                    <div id ="pauseText"><b>Paused</b></div>
+                 <div id = "pauseInfoText"><b> P - Pause/Unpause
+                    <br> Esc - Return to Main Menu
+                     <br> I - Information/Help</b></div>   
+                </div>
+                <!--- pause menu stuff-->
+                
               </div>
               
               
-              <div id='items'>
+              <div id='sidebar'>
                   
-                  <div id = 'itemUp'>
+                  <div id = 'playerInfo'>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
                     <label for="qty"><b><abbr title="Quantity">Health</abbr></b></label>
+                      
                     <!-- health stuff -->
                    <p> <strong id="health">100</strong>&nbsp;&nbsp;<strong id="timer"></strong></p>
                   </div>
                   
-                <button id = 'turretBT' onclick="place('turret1', 1)">first</button>
+                
+                  <i class="fa fa-usd fa-2x" style = "width: 100%" aria-hidden="true"></i>
+                  <ul class = "turrets">
+                      <li>  <button id = 'turretBT' onclick="place('turret1', 1)">first</button> </li>
+                      <li>  <button id = 'turretBT2' onclick="place('turret1', 1)">second</button> </li>
+                      <li>  <button id = 'turretBT3' onclick="place('turret1', 1)">third</button> </li>
+                      <li>  <button id = 'turretBT4' onclick="place('turret1', 1)">fourth</button> </li>
+                  </ul>
                   
-                  
-                  <div id= 'itemDown'>
-                      
-                  </div>
                 
               </div>
               
           </div>
       </div>
+    <script type="text/javascript" src="src/global.js"></script>
     <script type="text/javascript" src="src/health.js"></script>
     <script type="text/javascript" src="src/turret.js"></script>
     <script type="text/javascript" src="src/AI.js"></script>
