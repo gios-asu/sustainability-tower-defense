@@ -42,8 +42,6 @@ $("#turretBT4").mouseleave(function(){
 
 
 function place(type, id) {
-    var money = parseInt($('.money').text());
-    var cost;
     switch (id){
         case 1: 
             cost = 50;
@@ -53,13 +51,11 @@ function place(type, id) {
             break;
     }
   if(money >= cost){
+      place = true;
   placing = type;
   placingID = id;
   $('#lv1bgimg').css('cursor', 'url(img/placement/' + type + '.png) 16 16, auto');
   $('.gridslot').show();
-       money-=50;
-       alert(money);
-       $('.money').text(money.toString());
    }
     else{
         $('#moneyModal').modal('toggle');
@@ -67,8 +63,10 @@ function place(type, id) {
   
 }
 
-$('#lv1bgimg').click(function(event) {    
+$('#lv1bgimg').click(function(event) {  
   if (placing != "0" && placeable == true) {
+    money-=cost;
+    $('.money').text(money.toString());
     $(this).append('<div id="turret' + numTurrets + '" class="turret ' + placing + ' level1" data-num="' + numTurrets + '" data-damage="' + level1TDamage[placingID - 1] + '" data-range="' + level1TRange[placingID - 1] + '" data-rate="' + level1TRate[placingID - 1] + '">');
     var x = event.pageX - $('#lv1bgimg').offset().left;
     var y = event.pageY - $('#lv1bgimg').offset().top;
