@@ -8,8 +8,11 @@ var placingID = -1;
 var placeable = true;
 var numTurrets = 0; // number of turrets on map
 
+/*
 $("#turretBT").mouseover(function(){
+    console.log(this.id);
     $('.description').show();
+   
 });
 
 $("#turretBT").mouseleave(function(){
@@ -39,6 +42,31 @@ $("#turretBT4").mouseover(function(){
 $("#turretBT4").mouseleave(function(){
     $('.description').hide();
 });
+*/
+
+
+$('ul.turrets li div').each(function(){
+    $(this).mouseover(function(){ 
+        switch(this.id){
+            case 'turretBT':
+                $('.description').text(this.id + ": <cool turret info>")
+                break;
+            case 'turretBT2':
+                $('.description').text(this.id + ": <another cool turret info>")
+                break;
+            case 'turretBT3':
+                $('.description').text(this.id + ": <ultimate cool turret info>")
+        }
+         $('.description').show();
+        
+    });
+     $(this).mouseleave(function(){
+        console.log(this.id);
+         $('.description').hide();
+    });
+    
+});
+
 
 
 function place(type, id) {
@@ -49,9 +77,12 @@ function place(type, id) {
         case 2: 
             cost = 100;
             break;
+        case 3: 
+            cost = 150;
+            break;
     }
   if(money >= cost){
-      place = true;
+      hasMoney = true;
   placing = type;
   placingID = id;
   $('#lv1bgimg').css('cursor', 'url(img/placement/' + type + '.png) 16 16, auto');
@@ -64,7 +95,7 @@ function place(type, id) {
 }
 
 $('#lv1bgimg').click(function(event) {  
-  if (placing != "0" && placeable == true) {
+  if (placing != "0" && placeable == true && hasMoney) {
     money-=cost;
     $('.money').text(money.toString());
     $(this).append('<div id="turret' + numTurrets + '" class="turret ' + placing + ' level1" data-num="' + numTurrets + '" data-damage="' + level1TDamage[placingID - 1] + '" data-range="' + level1TRange[placingID - 1] + '" data-rate="' + level1TRate[placingID - 1] + '">');
