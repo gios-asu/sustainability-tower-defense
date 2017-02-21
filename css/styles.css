@@ -141,10 +141,23 @@
 }
 
 .turrets li{
-    padding-top: 10;
-    padding-bottom: 10;
+    padding-top: 5;
+    padding-bottom: 5;
     position: relative;
 }
+
+/*temp to be deleted later---*/
+.turrets li div{
+    width: 32px;
+    height: 32px;
+    margin: auto;
+    background-image: url(../img/bubble.png);
+    background-size: contain;
+}
+/*temp to be deleted later---*/
+
+
+
 
 #turretBT{
     width: 32px;
@@ -156,13 +169,13 @@
 
 .description{
     border: 1px solid red;
-    height: 320px;
+    height: 280px;
     opacity: 0.5;
     display: none;
     background: black;
     color: lightcoral;
     position: absolute;
-    top: 225px;
+    top: 320px;
 }
 
 #playerInfo{
