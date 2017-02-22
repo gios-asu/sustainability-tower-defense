@@ -94,7 +94,7 @@ function level1() {
     
     makeEnemy(level1Enemies[num], 1);
     num += 1;
-    if (num <= level1Times.length) {
+    if (num <= (level1Times.length - 1)) {
         setTimeout(level1, level1Times[num]*1000);
     }
             

@@ -149,6 +149,7 @@
     margin: auto;
     background-image: url(../img/bubble.png);
     background-size: contain;
+    cursor: pointer;
 }
 /*temp to be deleted later---*/
 
