@@ -42,4 +42,17 @@ $("#credits").click(function() {
   $("#infoText").html("Daniel Y.: stuff <br> Jason C.: things <br> Sam F.: rest of stuff<br> Austin Z.: yes <br> Ryan R.: Sponsor ");
 
 });
+
+$("#btnWinLoseQuit").click(function() {
+  paused = false;
+  window.location.reload();
+
+});
+
+$("#btnWinLosePlay").click(function() {
+  document.getElementById("pauseMenu").style.visibility = "hidden";
+  paused = false;
+  location.reload();
+
+});
 //////////////////

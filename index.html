@@ -62,15 +62,25 @@
       <div class="text-align: center;">
           <div id = 'lv1' style = "display:none">
               <div id ='lv1bgimg'>
-                <!---------------Pause Menu Pop up----------------------->
-                <!--- pause menu stuff-->
-                <div id ="pauseMenu" style="visibility:hidden">
                 
+                <!---------------Pause Menu Pop up----------------------->
+                <div id ="pauseMenu" style="visibility:hidden">
                     <div id ="pauseText"><b>Paused</b></div>
-                 <div id = "pauseInfoText"><b> P - Pause/Unpause
-                    <br> Esc - Return to Main Menu
-                     <br> I - Information/Help</b></div>   
-                </div>
+                    <div id = "pauseInfoText"><b> P - Pause/Unpause
+                      <br> Esc - Return to Main Menu
+                       <br> I - Information/Help</b></div>   
+                  </div>
+                <!--- pause menu stuff-->
+               
+                 <!---------------Win/lose popup----------------------->
+                <div id = 'fadeIn' style="visibility:hidden"></div>
+                <div id ="loseScreen" style="visibility:hidden">
+                <button type="button" id ="btnWinLosePlay" class="btn btn-success" >Play Again</button>
+                <button type="button" id ="btnWinLoseQuit" class="btn btn-danger" >Quit</button></div>
+                
+
+                <!---------------Win/lose popup end----------------------->
+                
                 <!---modal stuff------>
                 <div id="myModal" class="modal fade" role="dialog">
                   <div class="modal-dialog">
