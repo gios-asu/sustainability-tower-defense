@@ -46,6 +46,7 @@ function makeEnemy(type, level) {
   //future enemy object
   $('#lv1bgimg').append('<div id="enemy' + num + '" class="enemy enemy' + type + ' level' + level + '" data-turns="1" data-life="' + level1Life[type - 1] + '" data-damage="' + level1Damage[type - 1] + '" data-speed="' + level1Speed[type - 1] + '">');
   level1Path(num);
+  
  
 }
 
@@ -64,7 +65,6 @@ function level1Path(num) {
     });
   } else {
     // reached the end
-    
     controller.health -= $('#enemy' + num).attr('data-damage');
     $('#health').html(controller.health);
 
@@ -93,7 +93,7 @@ function level1() {
   //$('#timer').html(level1Times[num]);
   makeEnemy(level1Enemies[num], 1);
   num += 1;
-  if (num <= level1Times.length) {
+  if (num <= (level1Times.length - 1)) {
     setTimeout(level1, level1Times[num]*1000);
   }
     
