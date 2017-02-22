@@ -48,13 +48,13 @@ $("#turretBT4").mouseleave(function(){
 $('ul.turrets li div').each(function(){
     $(this).mouseover(function(){ 
         switch(this.id){
-            case 'turretBT':
+            case 'turret1':
                 $('.description').text(this.id + ": <cool turret info>")
                 break;
-            case 'turretBT2':
+            case 'turret2':
                 $('.description').text(this.id + ": <another cool turret info>")
                 break;
-            case 'turretBT3':
+            case 'turret3':
                 $('.description').text(this.id + ": <ultimate cool turret info>")
         }
          $('.description').show();

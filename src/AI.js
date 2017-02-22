@@ -90,13 +90,14 @@ function level1Path(num) {
 }
 
 function level1() {
-  //$('#timer').html(level1Times[num]);
-  makeEnemy(level1Enemies[num], 1);
-  num += 1;
-  if (num <= level1Times.length) {
-    setTimeout(level1, level1Times[num]*1000);
-  }
+    //$('#timer').html(level1Times[num]);
     
+    makeEnemy(level1Enemies[num], 1);
+    num += 1;
+    if (num <= level1Times.length) {
+        setTimeout(level1, level1Times[num]*1000);
+    }
+            
 }
 
 // creates blocker div elements along path to prevent turret placement

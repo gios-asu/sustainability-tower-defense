@@ -15,7 +15,38 @@ function reduceHP() {
 }
 
 $('.start').click(function(e){
-   $(this).css('background-image', 'url(../img/pausebutton.png)') 
-   alert("hel");
+    //pause animation
+    if(paused == false){
+        $(this).css('background-image', 'url(../img/playbutton.png)') ;
+        paused = true;
+        $('.enemy').each(function(){
+            $(this).stop();
+        });
+    }
+    else{
+        $(this).css('background-image', 'url(../img/pausebutton.png)') ;
+        paused = false;
+    }
+   
 });
 
+$('.turret.turret1.level1').each(function(){
+   $(this).mouseover(function(){
+       switch(this.id){
+            case 'turret1':
+                $('.description').text(this.id + ": <cool turret info>")
+                break;
+            case 'turret2':
+                $('.description').text(this.id + ": <another cool turret info>")
+                break;
+            case 'turret3':
+                $('.description').text(this.id + ": <ultimate cool turret info>")
+        }
+        $('.description').show();
+   });
+    
+    $(this).mouseleave(function(){
+        console.log(this.id);
+         $('.description').hide();
+    });
+});
