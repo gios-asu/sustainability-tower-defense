@@ -62,12 +62,22 @@ function level1Path(num) {
       $('#enemy' + num).attr('data-turns', turns + 1);
       level1Path(num);
     });
-  } else {
+  } else {//health checker
     // reached the end
-    
-    controller.health -= $('#enemy' + num).attr('data-damage');
+    controller.health -= 50;
+    //controller.health -= $('#enemy' + num).attr('data-damage');
     $('#health').html(controller.health);
-
+    
+    if(controller.health <= 0){
+      winLose = true;
+      document.getElementById("loseScreen").style.visibility = "visible";
+      document.getElementById("fadeIn").style.visibility = "visible";
+      if(paused){//bug fix with removing pause menu
+        document.getElementById("pauseMenu").style.visibility = "hidden";
+        paused = false;
+      }
+      
+    }
     $('#enemy' + num).remove();
   }
   
@@ -143,7 +153,7 @@ function blockPath() {
 function main() {
   //Pause game stuff ////////////
   $(document).bind("keydown", function(e){
-    if(e.keyCode == 80){// P key
+    if(e.keyCode == 80 && winLose == false){// P key
       
       if(document.getElementById("pauseMenu").style.visibility == "hidden"){
         document.getElementById("pauseMenu").style.visibility = "visible";
@@ -154,15 +164,21 @@ function main() {
         paused = false;
       }
     }
-     if(e.keyCode == 27 && paused)// escape key && currently paused
+     if(paused || winLose)//  currently paused
       {
-        document.getElementById("pauseMenu").style.visibility = "hidden";
-        document.getElementById("bgimg").style.display = "block";
-        document.getElementById("lv1").style.display = "none";
-        paused = false;
-        window.location.reload();
+        if(e.keyCode == 27){//escape key 
+           document.getElementById("pauseMenu").style.visibility = "hidden";
+          document.getElementById("bgimg").style.display = "block";
+          document.getElementById("lv1").style.display = "none";
+          paused = false;
+          window.location.reload();
+        }
+        else if(e.keyCode == 73 && !winLose){  // I for information
+          $('#myModal').modal('toggle');//display modal
+        }
       }
   });
+  
   ////pause game stuff ^////////
   
   

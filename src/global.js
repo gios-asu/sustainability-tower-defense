@@ -1,5 +1,4 @@
 //put all global variables here
-var paused = true;
 //current rp
 var money = parseInt($('.money').text()); 
 //cost of turret, modified in place(type, id)
@@ -8,6 +7,8 @@ var cost;
 var hasMoney;
 //health of the player
 var health = 100;
+var paused = false;
+var winLose = false;
 
 function reduceHP() {
     health -= 10;
