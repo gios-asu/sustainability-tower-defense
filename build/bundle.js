@@ -75,17 +75,30 @@
 	//INFO PAGE STUFF///
 	$("#howToPlay").click(function() {
 	  $("#infoTitle").text("How To Play");
-	 $("#infoText").text(" Controls: \n P - Pause \n\n <b>Objectives: \n Kill stuff ");
+	 $("#infoText").html("<b> Controls:</b> <br> P - Pause <br> <br> <b>Objectives:<br></b>Kill stuff  ");
 	});
 
 	$("#aboutSus").click(function() {
 	  $("#infoTitle").text("About Sustainability");
-	  $("#infoText").text("Sustainability info stuff ");
+	  $("#infoText").html("Sustainability info stuff ");
 	});
 
 	$("#credits").click(function() {
 	  $("#infoTitle").text("Credits");
-	  $("#infoText").text("Daniel: stuff \n Jason: things \n Sam: rest of stuff\n ");
+	  $("#infoText").html("Daniel Y.: stuff <br> Jason C.: things <br> Sam F.: rest of stuff<br> Austin Z.: yes <br> Ryan R.: Sponsor ");
+
+	});
+
+	$("#btnWinLoseQuit").click(function() {
+	  paused = false;
+	  window.location.reload();
+
+	});
+
+	$("#btnWinLosePlay").click(function() {
+	  document.getElementById("pauseMenu").style.visibility = "hidden";
+	  paused = false;
+	  location.reload();
 
 	});
 	//////////////////
