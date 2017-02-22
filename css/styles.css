@@ -155,21 +155,21 @@
 
 
 
-#turret1{
+#turretB1{
     width: 50px;
     height: 50px;
     margin: auto;
-    background-image: url(../img/algea_turret.png);
+    background-image: url(../img/turretB1.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-#turret2{
+#turretB2{
     width: 50px;
     height: 50px;
     margin: auto;
-    background-image: url(../img/rust_turret.png);
+    background-image: url(../img/turretB2.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -230,12 +230,13 @@
 
 .enemy1 {
   //background-color: blue;
-  background-image: url(../img/oil_blob1.png);
+  background-image: url(../img/blobslow.gif);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 32px;
-  width: 32px;
+  animation-duration: 10s;
+  height: 50px;
+  width: 50px;
 }
 
 .enemy2 {
@@ -278,7 +279,7 @@
 }
 
 .turret1 {
-    background-image: url(../img/algea_turret.png);
+    background-image: url(../img/turretB1.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -288,7 +289,7 @@
 }
 
 .turret2 {
-    background-image: url(../img/rust_turret.png);
+    background-image: url(../img/turretB2.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
