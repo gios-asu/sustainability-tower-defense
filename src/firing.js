@@ -22,19 +22,24 @@ function fire(index) {
     }
   });
   
-  if (distance < $('#turret' + index).attr('data-range')) {
-    var dmg = $('#turret' + index).attr('data-damage');
-    var curHealth = $('#' + closest).attr('data-life');
-    //alert('dmg is ' + dmg + ' and curHealth is ' + curHealth);
+  if (distance < parseInt($('#turret' + index).attr('data-range'))) {
+    var dmg = parseInt($('#turret' + index).attr('data-damage'));
+    var curHealth = parseInt($('#' + closest).attr('data-life'));
     if (curHealth <= dmg) {
       money+=10;
       $('.money').text(money.toString());
       $('#' + closest).remove();
     } else {
       $('#' + closest).attr('data-life', curHealth - dmg);
-      if (closest == 'enemy0') {
-        $('.debug').html(closest + ' life: ' + $('#' + closest).attr('data-life'));
+      $('#' + closest).css('filter', 'invert(1)');
+      setTimeout(function() {
+        $('#' + closest).css('filter', 'invert(0)');
+      }, 200);
+      var ang = Math.round(Math.atan2(ty - ey, tx - ex) * 180 / Math.PI);
+      if (closest == "enemy0") {
+        $('.debug').html('angle: ' + ang);
       }
+      $('#turret' + index).css('transform', 'rotate(' + ang + 'deg)');
       
     }
   }
@@ -45,7 +50,6 @@ function dist(x1, y1, x2, y2) {
 }
 
 function initFiring(id) {
-  id = id;
     setInterval(function() {
       fire(id);
     }, $('#turret' + id).attr('data-rate') * 1000);

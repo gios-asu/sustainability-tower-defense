@@ -1,5 +1,5 @@
 // Enemy info
-var level1TDamage = [10, 20]; // the damage for all turrets
+var level1TDamage = [20, 25]; // the damage for all turrets
 var level1TRange = [100, 200]; // the range for all turrets
 var level1TRate = [1, 1]; // time in between shots for turrets in seconds
 

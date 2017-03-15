@@ -311,10 +311,10 @@
     position: absolute;
     background-size: cover;
     background-color: transparent;
-    animation-name: rotate;
+    /*animation-name: rotate;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-timing-function: linear;*/
     
 }
 

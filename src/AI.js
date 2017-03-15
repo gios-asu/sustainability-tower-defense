@@ -1,7 +1,7 @@
 // Enemy info
 var level1Life = [100, 150];
 var level1Damage = [5, 15]; // the damage for all enemies
-var level1Speed = [1, 1.5]; // the speed for all enemies
+var level1Speed = [0.3, 0.5]; // the speed for all enemies
 
 // Spawning info
 var level1Enemies = [1, 1, 2, 2]; // the sequence of enemies to be generated
