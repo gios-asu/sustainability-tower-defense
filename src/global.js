@@ -8,7 +8,8 @@ var hasMoney;
 //health of the player
 var health = 100;
 var paused = false;
-var winLose = false;
+var winLose = false;//used to stop pausing from happening
+var youWin = false;
 
 function reduceHP() {
     health -= 10;

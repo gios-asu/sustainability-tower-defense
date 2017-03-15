@@ -110,6 +110,8 @@ $('#lv1bgimg').click(function(event) {
     $('#lv1bgimg').css('cursor', 'default');
     numTurrets += 1;
     $('.gridslot').hide();
+    if(numTurrets == 1)
+      achievementUnlocked("FIRST TURRET PLACED!");// first turret achievement
   }
 });
 
