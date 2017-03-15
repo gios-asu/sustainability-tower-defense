@@ -10,27 +10,27 @@ var level1Times = [3, 3, 4, 1]; // the sequence of times in seconds in between e
 // Path info
 var level1PathObj = [{x: 0, y: 55}, {x: 55, y: 55}, {x: 55, y: 470}, {x: 505, y: 470}, {x: 505, y: 230}, {x: 800, y: 230}];
 
+//
+var enemyCount = 0; // used in checking if all enemies have gone through the path
 // Populate grid with path
 grid[0][0] = "path";
 grid[0][1] = "path";
 grid[1][1] = "path";
+grid[2][1] = "path";
 for (var i = 2; i < 12; i++) {
-  grid[0][i] = "path";
   grid[1][i] = "path";
   grid[2][i] = "path";
 }
 for (var i = 2; i < 13; i++) {
-  grid[i][10] = "path";
   grid[i][11] = "path";
   grid[i][12] = "path";
 }
 for (var i = 10; i >= 5; i--) {
-  grid[11][i] = "path";
+
   grid[12][i] = "path";
   grid[13][i] = "path";
 }
 for (var i = 13; i < 20; i++) {
-  grid[i][4] = "path";
   grid[i][5] = "path";
   grid[i][6] = "path";
 }
@@ -64,21 +64,34 @@ function level1Path(num) {
     });
   } else {//health checker
     // reached the end
-    controller.health -= 50;
+    //controller.health -= 50;
     //controller.health -= $('#enemy' + num).attr('data-damage');
     $('#health').html(controller.health);
     
+    ///display lose or win screen here
     if(controller.health <= 0){
-      winLose = true;
+      winLose = true;//used if win or lose. to stop pause from happening
       document.getElementById("loseScreen").style.visibility = "visible";
       document.getElementById("fadeIn").style.visibility = "visible";
       if(paused){//bug fix with removing pause menu
         document.getElementById("pauseMenu").style.visibility = "hidden";
         paused = false;
-      }
-      
+      }   
     }
     $('#enemy' + num).remove();
+    enemyCount++;
+    if(enemyCount >= level1Enemies.length && controller.health > 0)//you win when all enemies in the level has spawned and you have health > 0
+      {
+        winLose = true;
+        youWin = true;// do something
+        document.getElementById("winScreen").style.visibility = "visible";
+        document.getElementById("fadeIn").style.visibility = "visible";
+        if(paused){//bug fix with removing pause menu
+          document.getElementById("pauseMenu").style.visibility = "hidden";
+          paused = false;
+        }   
+      }
+    
   }
   
   /*$('.enemy').each(function() {

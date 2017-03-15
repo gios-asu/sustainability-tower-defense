@@ -14,6 +14,11 @@ $("#buttonInfo").click(function() {//change background to info background
 
 $("#buttonExtra").click(function() {//change background to other background
   
+  if(achCounter >= 2)
+    alert("Stop it, get some help.");
+  else
+    achievementUnlocked("You clicked a button!");
+  
 });
 
 
@@ -43,6 +48,8 @@ $("#credits").click(function() {
 
 });
 
+
+/////////////////////win/lose stuff//////////////////
 $("#btnWinLoseQuit").click(function() {
   paused = false;
   window.location.reload();
@@ -55,4 +62,18 @@ $("#btnWinLosePlay").click(function() {
   location.reload();
 
 });
-//////////////////
+
+$("#btnWinContinue").click(function() {
+  document.getElementById("pauseMenu").style.visibility = "hidden";
+  paused = false;
+  alert("Next level coming soon!");
+
+});
+
+$("#btnWinQuit").click(function() {
+  document.getElementById("pauseMenu").style.visibility = "hidden";
+  paused = false;
+  location.reload();
+
+});
+//////////////////////////////////////////////
