@@ -7,8 +7,10 @@ var cost;
 var hasMoney;
 //health of the player
 var health = 100;
-var paused = false;
+var paused = true;
 var winLose = false;
+var t;
+var initialStart = false;
 
 function reduceHP() {
     health -= 10;
@@ -20,13 +22,28 @@ $('.start').click(function(e){
     if(paused == false){
         $(this).css('background-image', 'url(../img/playbutton.png)') ;
         paused = true;
+        
         $('.enemy').each(function(){
-            $(this).stop();
+            $(this).pause();
         });
+        t.stop();
+        
     }
     else{
+        if(initialStart ==  false){
+             t = new Timer(level1, level1Times[num]*1000);
+            initialStart = true;
+        }
+        else{
+            t.start();
+        }
         $(this).css('background-image', 'url(../img/pausebutton.png)') ;
         paused = false;
+        
+        $('.enemy').each(function(){
+            $(this).resume();
+        });
+        
     }
    
 });
@@ -51,3 +68,74 @@ $('.turret.turret1.level1').each(function(){
          $('.description').hide();
     });
 });
+
+
+(function() {
+	var $ = jQuery,
+		pauseId = 'jQuery.pause',
+		uuid = 1,
+		oldAnimate = $.fn.animate,
+		anims = {};
+
+	function now() { return new Date().getTime(); }
+
+	$.fn.animate = function(prop, speed, easing, callback) {
+		var optall = $.speed(speed, easing, callback);
+		optall.complete = optall.old; // unwrap callback
+		return this.each(function() {
+			// check pauseId
+			if (! this[pauseId])
+				this[pauseId] = uuid++;
+			// start animation
+			var opt = $.extend({}, optall);
+			oldAnimate.apply($(this), [prop, $.extend({}, opt)]);
+			// store data
+			anims[this[pauseId]] = {
+				run: true,
+				prop: prop,
+				opt: opt,
+				start: now(),
+				done: 0
+			};
+		});
+	};
+
+	$.fn.pause = function() {
+		return this.each(function() {
+			// check pauseId
+			if (! this[pauseId])
+				this[pauseId] = uuid++;
+			// fetch data
+			var data = anims[this[pauseId]];
+			if (data && data.run) {
+				data.done += now() - data.start;
+				if (data.done > data.opt.duration) {
+					// remove stale entry
+					delete anims[this[pauseId]];
+				} else {
+					// pause animation
+					$(this).stop();
+					data.run = false;
+				}
+			}
+		});
+	};
+
+	$.fn.resume = function() {
+		return this.each(function() {
+			// check pauseId
+			if (! this[pauseId])
+				this[pauseId] = uuid++;
+			// fetch data
+			var data = anims[this[pauseId]];
+			if (data && ! data.run) {
+				// resume animation
+				data.opt.duration -= data.done;
+				data.done = 0;
+				data.run = true;
+				data.start = now();
+				oldAnimate.apply($(this), [data.prop, $.extend({}, data.opt)]);
+			}
+		});
+	};
+})();

@@ -103,12 +103,32 @@ function level1() {
     //$('#timer').html(level1Times[num]);
     
     makeEnemy(level1Enemies[num], 1);
+  //  alert(paused);
     num += 1;
     if (num <= (level1Times.length - 1)) {
-        setTimeout(level1, level1Times[num]*1000);
-    }
-            
+        t = new Timer(level1, level1Times[num]*1000);
+    }           
 }
+
+
+function Timer(callback, delay) {
+    var timerId, start, remaining = delay;
+
+    this.stop = function() {
+        window.clearTimeout(timerId);
+        remaining -= new Date() - start;
+    };
+
+    this.start = function() {
+        start = new Date();
+        window.clearTimeout(timerId);
+        timerId = window.setTimeout(callback, remaining);
+    };
+
+    this.start();
+}
+
+
 
 // creates blocker div elements along path to prevent turret placement
 
@@ -184,8 +204,9 @@ function main() {
   
   if (level1Enemies.length != level1Times.length) {
     alert("DEV ERR: You need to have an equal number of times as you do enemies!");
-  } else {
-    setTimeout(level1, level1Times[num]*1000);
+  } else { 
+      t = new Timer(level1, level1Times[num]*1000);
+      
     /*blockPath(); Save for future version
     
     $('.blocker').mouseenter(function() {
