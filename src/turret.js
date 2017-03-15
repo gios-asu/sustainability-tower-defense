@@ -1,49 +1,12 @@
 // Enemy info
-var level1TDamage = [10]; // the damage for all turrets
-var level1TRange = [200]; // the range for all turrets
-var level1TRate = [1]; // time in between shots for turrets in seconds
+var level1TDamage = [20, 25]; // the damage for all turrets
+var level1TRange = [100, 200]; // the range for all turrets
+var level1TRate = [1, 1]; // time in between shots for turrets in seconds
 
 var placing = "0"; // default, means we aren't placing anything
 var placingID = -1;
 var placeable = true;
 var numTurrets = 0; // number of turrets on map
-
-/*
-$("#turretBT").mouseover(function(){
-    console.log(this.id);
-    $('.description').show();
-   
-});
-
-$("#turretBT").mouseleave(function(){
-    $('.description').hide();
-});
-
-$("#turretBT2").mouseover(function(){
-    $('.description').show();
-});
-
-$("#turretBT2").mouseleave(function(){
-    $('.description').hide();
-});
-
-$("#turretBT3").mouseover(function(){
-    $('.description').show();
-});
-
-$("#turretBT3").mouseleave(function(){
-    $('.description').hide();
-});
-
-$("#turretBT4").mouseover(function(){
-    $('.description').show();
-});
-
-$("#turretBT4").mouseleave(function(){
-    $('.description').hide();
-});
-*/
-
 
 $('ul.turrets li div').each(function(){
     $(this).mouseover(function(){ 
@@ -108,6 +71,7 @@ $('#lv1bgimg').click(function(event) {
     placing = "0";
     placingID = -1;
     $('#lv1bgimg').css('cursor', 'default');
+    initFiring(numTurrets);
     numTurrets += 1;
     $('.gridslot').hide();
     if(numTurrets == 1)
@@ -125,7 +89,7 @@ $('#lv1bgimg').mousemove(function(event) {
     $('.gridslot').css('left', xx * 40 + $('#lv1bgimg').offset().left  - $(window).scrollLeft()).css('top', yy * 40 + $('#lv1bgimg').offset().top - $(window).scrollTop());
     
     // debugging
-   $('.debug').html(xx + ", " + yy);
+   //$('.debug').html(xx + ", " + yy);
     
     if (grid[xx][yy] != "empty" || xx < 0 || yy < 0 || xx >= 20 || yy >= 20) {
       $('#lv1bgimg').css('cursor', 'url(img/placement/reds/' + placing + '.png) 16 16, auto');
