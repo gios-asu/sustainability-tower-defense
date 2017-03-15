@@ -205,7 +205,7 @@ function main() {
   if (level1Enemies.length != level1Times.length) {
     alert("DEV ERR: You need to have an equal number of times as you do enemies!");
   } else { 
-      t = new Timer(level1, level1Times[num]*1000);
+      //t = new Timer(level1, level1Times[num]*1000);
       
     /*blockPath(); Save for future version
     
