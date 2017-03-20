@@ -79,6 +79,7 @@ function level1Path(num) {
       }   
     }
     $('#enemy' + num).remove();
+    //win should show when all enemies finish spawning and no enemy on the board
     enemyCount++;
     if(enemyCount >= level1Enemies.length && controller.health > 0)//you win when all enemies in the level has spawned and you have health > 0
       {
