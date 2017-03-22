@@ -31,6 +31,27 @@ $('ul.turrets li div').each(function(){
 });
 
 
+function turretCheck(){ 
+    if(money >= 50){ 
+        $("#turretB1").css({"background-color" : "transparent", "pointerEvents" : "auto"}); 
+    } 
+    else{ 
+        $("#turretB1").css({"background-color" : "black" , "pointerEvents" : "none"}); 
+    } 
+    if(money >= 100){ 
+        $("#turretB2").css({"background-color" : "transparent", "pointerEvents" : "auto"}); 
+    } 
+    else{ 
+        $("#turretB2").css({"background-color" : "black", "pointerEvents" : "none"}); 
+    } 
+    if(money >= 150){ 
+         $("#turretB3").css({"background-color" : "transparent", "pointerEvents" : "auto"}); 
+    } 
+    else{ 
+        $("#turretB3").css({"background-color" : "black", "pointerEvents" : "none"}); 
+    } 
+} 
+
 
 function place(type, id) {
     switch (id){
