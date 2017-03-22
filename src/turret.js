@@ -12,13 +12,13 @@ $('ul.turrets li div').each(function(){
     $(this).mouseover(function(){ 
         switch(this.id){
             case 'turretB1':
-                $('.description').text(this.id + ": <cool turret info>")
+                $('.description').text("This little one has a little green thumb which she uses to clean up the world one thumb full at a time.")
                 break;
             case 'turretB2':
-                $('.description').text(this.id + ": <another cool turret info>")
+                $('.description').text("A speedy little persistent robot who's whole purpose in life is to clean up any mess it can reach. (2x the range of PewPew)")
                 break;
             case 'turretB3':
-                $('.description').text(this.id + ": <ultimate cool turret info>")
+                $('.description').text("Puny algae machine that can be placed on the tracks to slow down or erase the remains of oil blobs and such")
         }
          $('.description').show();
         
