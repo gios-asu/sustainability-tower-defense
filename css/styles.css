@@ -217,12 +217,14 @@
 
 
 /*temp to be deleted later---*/
+/*dont delete I changed it for 3rd turret :( */
 .turrets li div{
     width: 32px;
     height: 32px;
     margin: auto;
     background-image: url(../img/bubble.png);
     background-size: contain;
+    background-repeat: no-repeat;
     cursor: pointer;
 }
 /*temp to be deleted later---*/
@@ -352,6 +354,35 @@
     transform: rotate(360deg);
   }
 }
+
+/* totally inefficient disable button*/
+#redCross1{
+  background-image: url(../img/Cross.png);
+  background-repeat: no-repeat;
+  position:absolute;
+  height: 32px;
+  width 32px;
+  visibility: hidden;
+}
+
+#redCross2{
+  background-image: url(../img/Cross.png);
+  background-repeat: no-repeat;
+  position:absolute;
+  height: 32px;
+  width 32px;
+  visibility: hidden;
+}
+
+#redCross3{
+  background-image: url(../img/Cross.png);
+  background-repeat: no-repeat;
+  position:absolute;
+  height: 32px;
+  width 32px;
+  visibility: hidden;
+}
+
 
 .turret1 {
     background-image: url(../img/turretB1.png);

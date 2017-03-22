@@ -30,25 +30,31 @@ $('ul.turrets li div').each(function(){
     
 });
 
-
+//set red cross to show if not enough money and disable click
 function turretCheck(){ 
     if(money >= 50){ 
         $("#turretB1").css({"background-color" : "transparent", "pointerEvents" : "auto"}); 
+       $("#redCross1").css({"visibility" : "hidden"});
     } 
     else{ 
-        $("#turretB1").css({"background-color" : "black" , "pointerEvents" : "none"}); 
+        $("#redCross1").css({"visibility" : "visible"}); 
+       $("#turretB1").css({"pointerEvents" : "none"});
     } 
     if(money >= 100){ 
         $("#turretB2").css({"background-color" : "transparent", "pointerEvents" : "auto"}); 
+      $("#redCross2").css({"visibility" : "hidden"});
     } 
     else{ 
-        $("#turretB2").css({"background-color" : "black", "pointerEvents" : "none"}); 
+        $("#turretB2").css({"pointerEvents" : "none"}); 
+      $("#redCross2").css({"visibility" : "visible"});  
     } 
     if(money >= 150){ 
          $("#turretB3").css({"background-color" : "transparent", "pointerEvents" : "auto"}); 
+      $("#redCross3").css({"visibility" : "hidden"});
     } 
     else{ 
-        $("#turretB3").css({"background-color" : "black", "pointerEvents" : "none"}); 
+        $("#turretB3").css({"pointerEvents" : "none"}); 
+      $("#redCross3").css({"visibility" : "visible"});
     } 
 } 
 
