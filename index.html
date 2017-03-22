@@ -3,13 +3,22 @@
    <!-- <script type="text/javascript" src="src/paper-full.js"></script>-->
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css"/>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./vendor/jquery.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-561868-49', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
   </head>
   
   <body>
-    
+    <p>Achievement Counter: <a id="achCount">0</a></p>
    <h1 class="game-title">Sustain It!</h1>
      
      <div id = "bgimg"> 
@@ -18,7 +27,14 @@
       <button class ="button" id = "buttonExtra"> <span>stuff</span></button>
       </div>
     
-      <!--------------------------------INFO STUFF----------------------------------->
+    <div class="ach">
+  <div class="icon"><i class="fa fa-flag" aria-hidden="hidden"></i></div>
+  <div class="text_wrap">
+    <p class="title">Button Clicker!</p>
+    <span class="detail">you clicked a button</span>
+  </div>
+</div>
+      <!--------------------------------INFO STUFF--------------------------------- -->
       <div class="class1" style="text-align: center;">
         
           <div id = 'infoPage' style = "display:none;">
@@ -58,13 +74,13 @@
               </div>       
           </div>
       </div>
-    <!--------------------------------- level 1 ----------------------------------->
+    <!--------------------------------- level 1 --------------------------------- -->
     <div class="debug">Debug</div>
       <div class="text-align: center;">
           <div id = 'lv1' style = "display:none">
               <div id ='lv1bgimg'>
                 
-                <!---------------Pause Menu Pop up----------------------->
+                <!---------------Pause Menu Pop up--------------------- -->
                 <div id ="pauseMenu" style="visibility:hidden">
                     <div id ="pauseText"><b>Paused</b></div>
                     <div id = "pauseInfoText"><b> P - Pause/Unpause
@@ -73,14 +89,18 @@
                   </div>
                 <!--- pause menu stuff-->
                
-                 <!---------------Win/lose popup----------------------->
+                 <!---------------Win/lose popup--------------------- -->
                 <div id = 'fadeIn' style="visibility:hidden"></div>
                 <div id ="loseScreen" style="visibility:hidden">
                 <button type="button" id ="btnWinLosePlay" class="btn btn-success" >Play Again</button>
                 <button type="button" id ="btnWinLoseQuit" class="btn btn-danger" >Quit</button></div>
                 
+                <div id = 'fadeIn' style="visibility:hidden"></div>
+                <div id ="winScreen" style="visibility:hidden">
+                <button type="button" id ="btnWinContinue" style class="btn btn-success" >Next Level</button>
+                <button type="button" id ="btnWinQuit" class="btn btn-danger" >Quit</button></div>
 
-                <!---------------Win/lose popup end----------------------->
+                <!---------------Win/lose popup end--------------------- -->
                 
                 <!---modal stuff------>
                 <div id="myModal" class="modal fade" role="dialog">
@@ -125,11 +145,11 @@
                     <i class="fa fa-heart" aria-hidden="true"></i>
                     <label for="qty"><b><abbr title="Quantity">Health</abbr></b></label>
                       
-                    <!---------- health stuff --------------------->
+                    <!---------- health stuff ------------------- -->
                     <p> <strong id="health">100</strong>&nbsp;&nbsp;<strong id="timer"></strong></p>
                 </div>
     
-                  <!----------------------- Modal ------------------------->
+                  <!----------------------- Modal ----------------------- -->
                 <div class="modal fade" id="moneyModal" role="dialog">
                     <div class="modal-dialog">
     
@@ -148,17 +168,17 @@
                         </div>
                     </div>
                 </div>
-                <!-------------Money--------------------------------->
+                <!-------------Money------------------------------- -->
                 <div class = 'rpSign'></div>
                 <div class = 'money' style = "display:inline-block; font-size: 30px; margin-left: 45px; font-family: 'Pangolin', cursive;">200</div> 
                 <div style = "display:inline-block; font-size: 28px; font-family: 'Pangolin', cursive;">RP</div>
                   
             
-                  <!-------------turrets--------------------------------->
+                  <!-------------turrets--------------------------------- -->
                 <ul class = "turrets">
                     <li>  <div id = 'turretB1' onclick="place('turret1',1)"></div> <p>Cost: 50RP</p> </li>
-                    <li>  <div id = 'turretB2'onclick="place('turret1',2)"></div>  <p>Cost: 100RP</p> </li>
-                    <li>  <div id = 'turretB3' onclick="place('turret1',3)">third</div>  <p>Cost: 150RP</p></li>
+                    <li>  <div id = 'turretB2'onclick="place('turret2',2)"></div>  <p>Cost: 100RP</p> </li>
+                    <li>  <div id = 'turretB3' onclick="place('turret2',3)">third</div>  <p>Cost: 150RP</p></li>
                 </ul>
                 <div class = "description" id = 'bt1'>Some description for turrets</div>
                 <div class = "start"></div>
@@ -166,13 +186,15 @@
               
           </div>
       </div>
+    
     <script type="text/javascript" src="src/global.js"></script>
     <script type="text/javascript" src="src/grid.js"></script>
     <script type="text/javascript" src="src/health.js"></script>
     <script type="text/javascript" src="src/turret.js"></script>
     <script type="text/javascript" src="src/AI.js"></script>
     <script type="text/javascript" src="src/firing.js"></script>
-    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="src/achievement.js"></script>
+    <script type="text/javascript" src="./vendor/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="build/bundle.js" charset="utf-8"></script>
 
 

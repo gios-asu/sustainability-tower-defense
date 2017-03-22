@@ -1,7 +1,7 @@
 // Enemy info
-var level1Life = [10, 20];
+var level1Life = [100, 150];
 var level1Damage = [5, 15]; // the damage for all enemies
-var level1Speed = [1, 1.5]; // the speed for all enemies
+var level1Speed = [0.3, 0.5]; // the speed for all enemies
 
 // Spawning info
 var level1Enemies = [1, 1, 2, 2]; // the sequence of enemies to be generated
@@ -10,27 +10,27 @@ var level1Times = [3, 3, 4, 1]; // the sequence of times in seconds in between e
 // Path info
 var level1PathObj = [{x: 0, y: 55}, {x: 55, y: 55}, {x: 55, y: 470}, {x: 505, y: 470}, {x: 505, y: 230}, {x: 800, y: 230}];
 
+//
+var enemyCount = 0; // used in checking if all enemies have gone through the path
 // Populate grid with path
 grid[0][0] = "path";
 grid[0][1] = "path";
 grid[1][1] = "path";
+grid[2][1] = "path";
 for (var i = 2; i < 12; i++) {
-  grid[0][i] = "path";
   grid[1][i] = "path";
   grid[2][i] = "path";
 }
 for (var i = 2; i < 13; i++) {
-  grid[i][10] = "path";
   grid[i][11] = "path";
   grid[i][12] = "path";
 }
 for (var i = 10; i >= 5; i--) {
-  grid[11][i] = "path";
+
   grid[12][i] = "path";
   grid[13][i] = "path";
 }
 for (var i = 13; i < 20; i++) {
-  grid[i][4] = "path";
   grid[i][5] = "path";
   grid[i][6] = "path";
 }
@@ -62,23 +62,37 @@ function level1Path(num) {
       $('#enemy' + num).attr('data-turns', turns + 1);
       level1Path(num);
     });
-  } else {//health checker
+  } else if (!isNaN(turns)) {//health checker
     // reached the end
-    controller.health -= 50;
+    //controller.health -= 50;
     //controller.health -= $('#enemy' + num).attr('data-damage');
     $('#health').html(controller.health);
     
+    ///display lose or win screen here
     if(controller.health <= 0){
-      winLose = true;
+      winLose = true;//used if win or lose. to stop pause from happening
       document.getElementById("loseScreen").style.visibility = "visible";
       document.getElementById("fadeIn").style.visibility = "visible";
       if(paused){//bug fix with removing pause menu
         document.getElementById("pauseMenu").style.visibility = "hidden";
         paused = false;
-      }
-      
+      }   
     }
     $('#enemy' + num).remove();
+    //win should show when all enemies finish spawning and no enemy on the board
+    enemyCount++;
+    if(enemyCount >= level1Enemies.length && controller.health > 0)//you win when all enemies in the level has spawned and you have health > 0
+      {
+        winLose = true;
+        youWin = true;// do something
+        document.getElementById("winScreen").style.visibility = "visible";
+        document.getElementById("fadeIn").style.visibility = "visible";
+        if(paused){//bug fix with removing pause menu
+          document.getElementById("pauseMenu").style.visibility = "hidden";
+          paused = false;
+        }   
+      }
+    
   }
   
   /*$('.enemy').each(function() {
@@ -103,12 +117,32 @@ function level1() {
     //$('#timer').html(level1Times[num]);
     
     makeEnemy(level1Enemies[num], 1);
+  //  alert(paused);
     num += 1;
     if (num <= (level1Times.length - 1)) {
-        setTimeout(level1, level1Times[num]*1000);
-    }
-            
+        t = new Timer(level1, level1Times[num]*1000);
+    }           
 }
+
+
+function Timer(callback, delay) {
+    var timerId, start, remaining = delay;
+
+    this.stop = function() {
+        window.clearTimeout(timerId);
+        remaining -= new Date() - start;
+    };
+
+    this.start = function() {
+        start = new Date();
+        window.clearTimeout(timerId);
+        timerId = window.setTimeout(callback, remaining);
+    };
+
+    this.start();
+}
+
+
 
 // creates blocker div elements along path to prevent turret placement
 
@@ -180,12 +214,14 @@ function main() {
   });
   
   ////pause game stuff ^////////
-  
+  //to disable turret if the money is less than the cost     
+  setInterval(function(){turretCheck();}, 1000); 
   
   if (level1Enemies.length != level1Times.length) {
     alert("DEV ERR: You need to have an equal number of times as you do enemies!");
-  } else {
-    setTimeout(level1, level1Times[num]*1000);
+  } else { 
+      //t = new Timer(level1, level1Times[num]*1000);
+      
     /*blockPath(); Save for future version
     
     $('.blocker').mouseenter(function() {
