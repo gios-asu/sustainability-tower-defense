@@ -1,7 +1,7 @@
 // Enemy info
-var level1Life = [10, 20];
+var level1Life = [100, 150];
 var level1Damage = [5, 15]; // the damage for all enemies
-var level1Speed = [1, 1.5]; // the speed for all enemies
+var level1Speed = [0.3, 0.5]; // the speed for all enemies
 
 // Spawning info
 var level1Enemies = [1, 1, 2, 2]; // the sequence of enemies to be generated
@@ -62,7 +62,7 @@ function level1Path(num) {
       $('#enemy' + num).attr('data-turns', turns + 1);
       level1Path(num);
     });
-  } else {//health checker
+  } else if (!isNaN(turns)) {//health checker
     // reached the end
     //controller.health -= 50;
     //controller.health -= $('#enemy' + num).attr('data-damage');
@@ -117,12 +117,32 @@ function level1() {
     //$('#timer').html(level1Times[num]);
     
     makeEnemy(level1Enemies[num], 1);
+  //  alert(paused);
     num += 1;
     if (num <= (level1Times.length - 1)) {
-        setTimeout(level1, level1Times[num]*1000);
-    }
-            
+        t = new Timer(level1, level1Times[num]*1000);
+    }           
 }
+
+
+function Timer(callback, delay) {
+    var timerId, start, remaining = delay;
+
+    this.stop = function() {
+        window.clearTimeout(timerId);
+        remaining -= new Date() - start;
+    };
+
+    this.start = function() {
+        start = new Date();
+        window.clearTimeout(timerId);
+        timerId = window.setTimeout(callback, remaining);
+    };
+
+    this.start();
+}
+
+
 
 // creates blocker div elements along path to prevent turret placement
 
@@ -198,8 +218,9 @@ function main() {
   
   if (level1Enemies.length != level1Times.length) {
     alert("DEV ERR: You need to have an equal number of times as you do enemies!");
-  } else {
-    setTimeout(level1, level1Times[num]*1000);
+  } else { 
+      //t = new Timer(level1, level1Times[num]*1000);
+      
     /*blockPath(); Save for future version
     
     $('.blocker').mouseenter(function() {
