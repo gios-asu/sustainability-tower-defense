@@ -20,6 +20,7 @@
   transition: all 0.5s;
   cursor: pointer;
 }
+
 #buttonStart {
  margin: 200px 0px 10px 300px;/*top right bottom left*/
 }

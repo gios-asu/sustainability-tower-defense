@@ -1,11 +1,11 @@
 // Enemy info
-var level1Life = [100, 150];
-var level1Damage = [5, 15]; // the damage for all enemies
+var level1Life = [100, 200];
+var level1Damage = [20, 25]; // the damage for all enemies
 var level1Speed = [0.3, 0.5]; // the speed for all enemies
 
 // Spawning info
-var level1Enemies = [1, 1, 2, 2]; // the sequence of enemies to be generated
-var level1Times = [3, 3, 4, 1]; // the sequence of times in seconds in between each enemy generation. The first number determines how long a wait there is before the first enemy is spawned.
+var level1Enemies = [1, 1, 2, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]; // the sequence of enemies to be generated
+var level1Times = [3, 1, 2, 1, 2, 3, 1, 3, 3, 2, 2, 2, 2, 2, 2, 1, 1, 1]; // the sequence of times in seconds in between each enemy generation. The first number determines how long a wait there is before the first enemy is spawned.
 
 // Path info
 var level1PathObj = [{x: 0, y: 55}, {x: 55, y: 55}, {x: 55, y: 470}, {x: 505, y: 470}, {x: 505, y: 230}, {x: 800, y: 230}];
@@ -64,7 +64,7 @@ function level1Path(num) {
     });
   } else if (!isNaN(turns)) {//health checker
     // reached the end
-    //controller.health -= 50;
+    controller.health -= 50;
     //controller.health -= $('#enemy' + num).attr('data-damage');
     $('#health').html(controller.health);
     

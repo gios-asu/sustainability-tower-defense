@@ -1,5 +1,5 @@
 // Enemy info
-var level1TDamage = [20, 25]; // the damage for all turrets
+var level1TDamage = [20, 50]; // the damage for all turrets
 var level1TRange = [100, 200]; // the range for all turrets
 var level1TRate = [1, 1]; // time in between shots for turrets in seconds
 
@@ -72,10 +72,6 @@ function place(type, id) {
   $('#lv1bgimg').css('cursor', 'url(img/placement/' + type + '.png) 16 16, auto');
   $('.gridslot').show();
    }
-    else{
-        $('#moneyModal').modal('toggle');
-    }
-  
 }
 
 $('#lv1bgimg').click(function(event) {  
