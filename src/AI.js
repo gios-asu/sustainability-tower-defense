@@ -214,7 +214,8 @@ function main() {
   });
   
   ////pause game stuff ^////////
-  
+  //to disable turret if the money is less than the cost     
+  setInterval(function(){turretCheck();}, 1000); 
   
   if (level1Enemies.length != level1Times.length) {
     alert("DEV ERR: You need to have an equal number of times as you do enemies!");
