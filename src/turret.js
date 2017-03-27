@@ -75,7 +75,7 @@ function place(type, id) {
       hasMoney = true;
   placing = type;
   placingID = id;
-  $('#lv1bgimg').css('cursor', 'url(img/placement/' + type + '.png) 16 16, auto');
+  $('#lv1bgimg').css('cursor', 'url(img/placement/' + type + '.png) 16 16, auto');// places the image of the turret on the board
   $('.gridslot').show();
    }
     else{

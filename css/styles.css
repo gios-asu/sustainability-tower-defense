@@ -180,7 +180,7 @@
     width: 800px;
     height: 600px;
     border: 1px solid black;
-    background-image: url('../img/level1bg.jpg');
+    background-image: url('../img/level1bg-water.png');
     background-color: azure;
     display: inline-block;
 }
@@ -396,6 +396,16 @@
 
 .turret2 {
     background-image: url(../img/turretB2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*border-radius: 20px; /* make it round */
+    height: 42px;
+    width: 42px;
+}
+
+.turret3 {
+    background-image: url(../img/bubble.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
