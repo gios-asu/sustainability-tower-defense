@@ -34,17 +34,17 @@ $("#dropB").click(function() {//ignore this function..
 //INFO PAGE STUFF///
 $("#howToPlay").click(function() {
   $("#infoTitle").text("How To Play");
- $("#infoText").html("<b> Controls:</b> <br> P - Pause <br> <br> <b>Objectives:</b> <br> Stop any oil bloobs from escaping the envioronment by placing Pew Pew, PaPa Pew, and Blob Stopper along its path. These turrets will attack the oil blobs, can you sustain the enviornment to destroy as many oil blobs as possible?");
+ $("#infoText").html("<b> Controls:</b> <br> P - Info Menu <br> <br> <b>Objectives:</b> <br> Stop any oil bloobs from escaping the envioronment by placing Pew Pew, PaPa Pew, and Blob Stopper along its path. These turrets will attack the oil blobs, can you sustain the enviornment to destroy as many oil blobs as possible?");
 });
 
 $("#aboutSus").click(function() {
   $("#infoTitle").text("About The Game");
-  $("#infoText").html("This game is similar to tower defense. The player will place the turret along the enemy path to destroy them. When the enemy reached its destination without dying the player will lose some health. Once the player's health reaches 0 then it is game over.");
+  $("#infoText").html(" <b><i>Sustain It </b></i> is a game that utilizes the concept of sustainability into a Tower Defense style game.<br> <p>1. Earn RP (Recycle Points) by successfully destroying enemies with your defenses.</p> <p>2. You lose Health if an enemy successfully reaches the end of the path</p><p><b>The game ends when:</b></p><ul><li>You successfully destroyed all enemies</li><li>Your health reaches 0</li></ul><p><center><b>How To Play</b></center></p><p>Click on a turret to place it in an available space on the map</p>");
 });
 
 $("#credits").click(function() {
   $("#infoTitle").text("Credits");
-  $("#infoText").html("Daniel Y.: stuff <br> Jason C.: things <br> Sam F.: rest of stuff<br> Austin Z.: yes <br> Ryan R.: Sponsor ");
+  $("#infoText").html("Daniel Y.: Project Lead, UI Designer, Programmer <br> Jason C.: Programmer, UI Designer <br> Sam F.: AI design, Programmer <br> Ryan R.: Sponsor <br> Nathan R.: Sponsor");
 
 });
 

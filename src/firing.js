@@ -29,6 +29,7 @@ function fire(index) {
       money+=20;
       $('.money').text(money.toString());
       $('#' + closest).remove();
+      checkWinCondition();
     } else {
       $('#' + closest).attr('data-life', curHealth - dmg);
       $('#' + closest).css('filter', 'invert(1)');
