@@ -181,7 +181,7 @@
     width: 800px;
     height: 600px;
     border: 1px solid black;
-    background-image: url('../img/level1bg.jpg');
+    background-image: url('../img/level1bg-water.png');
     background-color: azure;
     display: inline-block;
 }
@@ -218,12 +218,14 @@
 
 
 /*temp to be deleted later---*/
+/*dont delete I changed it for 3rd turret :( */
 .turrets li div{
     width: 32px;
     height: 32px;
     margin: auto;
     background-image: url(../img/bubble.png);
     background-size: contain;
+    background-repeat: no-repeat;
     cursor: pointer;
 }
 /*temp to be deleted later---*/
@@ -354,6 +356,35 @@
   }
 }
 
+/* totally inefficient disable button*/
+#redCross1{
+  background-image: url(../img/Cross.png);
+  background-repeat: no-repeat;
+  position:absolute;
+  height: 32px;
+  width 32px;
+  visibility: hidden;
+}
+
+#redCross2{
+  background-image: url(../img/Cross.png);
+  background-repeat: no-repeat;
+  position:absolute;
+  height: 32px;
+  width 32px;
+  visibility: hidden;
+}
+
+#redCross3{
+  background-image: url(../img/Cross.png);
+  background-repeat: no-repeat;
+  position:absolute;
+  height: 32px;
+  width 32px;
+  visibility: hidden;
+}
+
+
 .turret1 {
     background-image: url(../img/turretB1.png);
     background-size: contain;
@@ -366,6 +397,16 @@
 
 .turret2 {
     background-image: url(../img/turretB2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*border-radius: 20px; /* make it round */
+    height: 42px;
+    width: 42px;
+}
+
+.turret3 {
+    background-image: url(../img/bubble.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

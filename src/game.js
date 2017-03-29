@@ -34,12 +34,12 @@ $("#dropB").click(function() {//ignore this function..
 //INFO PAGE STUFF///
 $("#howToPlay").click(function() {
   $("#infoTitle").text("How To Play");
- $("#infoText").html("<b> Controls:</b> <br> P - Pause <br> <br> <b>Objectives:<br></b>Kill stuff  ");
+ $("#infoText").html("<b> Controls:</b> <br> P - Pause <br> <br> <b>Objectives:</b> <br> Stop any oil bloobs from escaping the envioronment by placing Pew Pew, PaPa Pew, and Blob Stopper along its path. These turrets will attack the oil blobs, can you sustain the enviornment to destroy as many oil blobs as possible?");
 });
 
 $("#aboutSus").click(function() {
-  $("#infoTitle").text("About Sustainability");
-  $("#infoText").html("Sustainability info stuff ");
+  $("#infoTitle").text("About The Game");
+  $("#infoText").html("This game is similar to tower defense. The player will place the turret along the enemy path to destroy them. When the enemy reached its destination without dying the player will lose some health. Once the player's health reaches 0 then it is game over.");
 });
 
 $("#credits").click(function() {
