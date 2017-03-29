@@ -64,7 +64,7 @@ function level1Path(num) {
     });
   } else if (!isNaN(turns)) {//health checker
     // reached the end
-    controller.health -= 10;
+    controller.health -= 20;
     //controller.health -= $('#enemy' + num).attr('data-damage');
     $('#health').html(controller.health);
     
@@ -116,6 +116,8 @@ function checkWinCondition()
           document.getElementById("pauseMenu").style.visibility = "hidden";
           paused = false;
         }   
+        if(numTurrets <=2)
+          achievementUnlocked("WIN WITH ONLY 2 TURRETS!");
       }
 }
 
