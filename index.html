@@ -74,6 +74,9 @@
               </div>       
           </div>
       </div>
+    
+  
+    
     <!--------------------------------- level 1 --------------------------------- -->
     <div class="debug">Debug</div>
       <div class="text-align: center;">
@@ -82,10 +85,10 @@
                 
                 <!---------------Pause Menu Pop up--------------------- -->
                 <div id ="pauseMenu" style="visibility:hidden">
-                    <div id ="pauseText"><b>Paused</b></div>
-                    <div id = "pauseInfoText"><b> P - Pause/Unpause
+                    <div id ="pauseText"><b>Shortcuts/Hints</b></div>
+                    <div id = "pauseInfoText"><b> P - Show/Hide shortcuts
                       <br> Esc - Return to Main Menu
-                       <br> I - Information/Help</b></div>   
+                       <br> I - Brief Information/Help</b></div>   
                   </div>
                 <!--- pause menu stuff-->
                
@@ -102,7 +105,100 @@
 
                 <!---------------Win/lose popup end--------------------- -->
                 
-                <!---modal stuff------>
+                  <!-- Intro modal -->
+               <div id="introModal1" class="modal fade" role="dialog" data-backdrop="static">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                      <h4 class="modal-title">Welcome!</h4>
+                    </div>
+                    <div class="modal-body">
+                     Welcome to <i>Sustain It</i>, you are the Sustainability Ranger in the city of Tempe. The mayor has given you a task to help filter the city's water from the contamination coming from the ocean.
+                        <br>
+                      With the help of modern technology, you have access to the most advanced robots and utilities to clean our water system.
+                      </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" onclick ="showModal('p2')">Next</button>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                
+              <div class="modal fade" id="p2" role="dialog" data-backdrop="static">
+                <div class="modal-dialog">
+
+                  <div class="modal-content">
+                    <div class="modal-header">
+
+                      <h3>Instructions</h3>
+                    </div>
+                    <div class="modal-body">
+                     
+                        <p>
+                          The mayor has given you a budget of 200 RP (Recycle Points) to start off. You can earn more by successfuly filtering out the unwanted objects passing through the stream. <b>AKA: Destroying them</b>
+                        </p>
+                        <br>
+                        <u>Some hazardous objects/materials to be aware of:</u>
+                      <br>
+                        <li> <b>Oil blobs</b> - They will clog up our pipes</li>
+                        <li> <b>Trash(paper, can, bottles)</b> - May cause viruses to spread.</li>
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" onclick="showModal('introModal1')">Previous</button>
+                        <button type="button" class="btn btn-primary" onclick="showModal('p3')">Next</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+              <div class="modal fade" id="p3" role="dialog" data-backdrop="static">
+                <div class="modal-dialog">
+
+                  <div class="modal-content">
+                    <div class="modal-header">
+
+                      <h3>How To Play</h3>
+                    </div>
+                    <div class="modal-body">
+                     Currently there are <b>three</b> main instruments you can use:
+                      <li><b>Pew Pew:</b> Basic algae infused laser capable of disintegrating oil blobs and most trash materials.</li>
+                      <li><b>Papa Pew:</b>Advanced version of "Pew Pew" with increased ranged and power.</li>
+                      <li><b>Blob Stopper:</b> Advanced wind powered vacuum capable of slowing down incoming materials. </li>
+                      <br>
+                      <b>Starting Out:</b>
+                      <br>
+                      1. You can purchase robots by <b>clicking</b> the desired item in the item menu bar and <b>placing</b> them on the map.
+                      <br>
+                      2. Begin the wave by clicking the <b>PLAY</b> buton.
+                      <br>
+                      3. You may place more robots anytime during the game as long as you have sufficient RP.
+                      <br>
+                      4. Press <b>P</b> to show Hints/Shortcut menu
+                      <br>
+                      <br>
+                      <b>DISCLAIMER:</b>
+                      <br>
+                      Sprites used are placeholders and will be replaced in the final product.
+                      <br>
+                      The game is still in its early stages, bugs are inevitable.
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" onclick="showModal('p2')">Previous</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">PLAY</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+                <!---modal information------>
                 <div id="myModal" class="modal fade" role="dialog">
                   <div class="modal-dialog">
 
@@ -195,7 +291,6 @@
     
     <script type="text/javascript" src="src/global.js"></script>
     <script type="text/javascript" src="src/grid.js"></script>
-    <script type="text/javascript" src="src/health.js"></script>
     <script type="text/javascript" src="src/turret.js"></script>
     <script type="text/javascript" src="src/AI.js"></script>
     <script type="text/javascript" src="src/firing.js"></script>
