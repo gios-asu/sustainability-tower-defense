@@ -19,6 +19,7 @@ $('ul.turrets li div').each(function(){
                 break;
             case 'turretB3':
                 $('.description').text("Puny algae machine that can be placed on the tracks to slow down or erase the remains of oil blobs and such")
+                break;
         }
          $('.description').show();
         
