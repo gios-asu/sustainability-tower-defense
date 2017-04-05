@@ -13,6 +13,12 @@ var initialStart = false;
 var winLose = false;//used to stop pausing from happening
 var youWin = false;
 
+//next/previous modal functionality for intro
+ function showModal(id) {
+      $(".modal").modal('hide');
+      $("#" + id).modal();
+    }
+
 function reduceHP() {
     health -= 10;
     document.getElementById("health").innerHTML = health;

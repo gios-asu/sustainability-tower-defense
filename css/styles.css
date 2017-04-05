@@ -190,7 +190,8 @@
     width: 150px;
     height: 600px;
     border: 1px solid black;
-    background-color: #f4f142;
+    /*background-color: #f4f142;*/
+    background-image: url('../img/bgRightBar.png');
     display: inline-block;
     position: relative;
   float: right;
@@ -285,7 +286,7 @@
 #playerInfo{
     width: 100%;
     height: 50px;
-    background-color: lightblue;
+    /*background-color: lightblue;*/
     margin-bottom: 5px;
 }
 
@@ -429,7 +430,12 @@
   pointer-events: none;
 }
 
-
+/*#introModal1 .modal-body {
+    background-image: url('http://myfunnymemes.com/wp-content/uploads/2015/04/Doge-Meme-Lion-In-All-Its-Majestic-Glory.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}*/
 
 /*ACHIEVEMENT SYSTEM STUFF */
 * {
