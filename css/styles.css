@@ -20,6 +20,7 @@
   transition: all 0.5s;
   cursor: pointer;
 }
+
 #buttonStart {
  margin: 200px 0px 10px 300px;/*top right bottom left*/
 }
@@ -180,7 +181,7 @@
     width: 800px;
     height: 600px;
     border: 1px solid black;
-    background-image: url('../img/level1bg.jpg');
+    background-image: url('../img/level1bg-water.png');
     background-color: azure;
     display: inline-block;
 }
@@ -189,7 +190,8 @@
     width: 150px;
     height: 600px;
     border: 1px solid black;
-    background-color: #f4f142;
+    /*background-color: #f4f142;*/
+    background-image: url('../img/bgRightBar.png');
     display: inline-block;
     position: relative;
   float: right;
@@ -217,12 +219,14 @@
 
 
 /*temp to be deleted later---*/
+/*dont delete I changed it for 3rd turret :( */
 .turrets li div{
     width: 32px;
     height: 32px;
     margin: auto;
     background-image: url(../img/bubble.png);
     background-size: contain;
+    background-repeat: no-repeat;
     cursor: pointer;
 }
 /*temp to be deleted later---*/
@@ -258,14 +262,18 @@
     background: black;
     color: lightcoral;
     position: absolute;
-    top: 320px;
+    top: 25vh;
+    left: 85vw;
+    width: 150px;
+    height: 200px;
+    
 }
 
 .start{
     background-image: url(../img/playbutton.png);
     background-size: contain;
     background-repeat: no-repeat;
-    margin-top:200px;
+    margin-top:120px;
     margin-left:10px;
     width: 100%;
     height: 100%;
@@ -278,7 +286,7 @@
 #playerInfo{
     width: 100%;
     height: 50px;
-    background-color: lightblue;
+    /*background-color: lightblue;*/
     margin-bottom: 5px;
 }
 
@@ -353,6 +361,35 @@
   }
 }
 
+/* totally inefficient disable button*/
+#redCross1{
+  background-image: url(../img/Cross.png);
+  background-repeat: no-repeat;
+  position:absolute;
+  height: 32px;
+  width 32px;
+  visibility: hidden;
+}
+
+#redCross2{
+  background-image: url(../img/Cross.png);
+  background-repeat: no-repeat;
+  position:absolute;
+  height: 32px;
+  width 32px;
+  visibility: hidden;
+}
+
+#redCross3{
+  background-image: url(../img/Cross.png);
+  background-repeat: no-repeat;
+  position:absolute;
+  height: 32px;
+  width 32px;
+  visibility: hidden;
+}
+
+
 .turret1 {
     background-image: url(../img/turretB1.png);
     background-size: contain;
@@ -365,6 +402,16 @@
 
 .turret2 {
     background-image: url(../img/turretB2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*border-radius: 20px; /* make it round */
+    height: 42px;
+    width: 42px;
+}
+
+.turret3 {
+    background-image: url(../img/bubble.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -383,7 +430,12 @@
   pointer-events: none;
 }
 
-
+/*#introModal1 .modal-body {
+    background-image: url('http://myfunnymemes.com/wp-content/uploads/2015/04/Doge-Meme-Lion-In-All-Its-Majestic-Glory.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}*/
 
 /*ACHIEVEMENT SYSTEM STUFF */
 * {

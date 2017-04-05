@@ -1,11 +1,11 @@
 // Enemy info
-var level1Life = [100, 150];
-var level1Damage = [5, 15]; // the damage for all enemies
+var level1Life = [100, 200];
+var level1Damage = [20, 25]; // the damage for all enemies
 var level1Speed = [0.3, 0.5]; // the speed for all enemies
 
 // Spawning info
-var level1Enemies = [1, 1, 2, 2]; // the sequence of enemies to be generated
-var level1Times = [3, 3, 4, 1]; // the sequence of times in seconds in between each enemy generation. The first number determines how long a wait there is before the first enemy is spawned.
+var level1Enemies = [1, 1, 2, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]; // the sequence of enemies to be generated
+var level1Times = [3, 1, 2, 1, 2, 3, 1, 3, 3, 2, 2, 2, 2, 2, 2, 1, 1, 1]; // the sequence of times in seconds in between each enemy generation. The first number determines how long a wait there is before the first enemy is spawned.
 
 // Path info
 var level1PathObj = [{x: 0, y: 55}, {x: 55, y: 55}, {x: 55, y: 470}, {x: 505, y: 470}, {x: 505, y: 230}, {x: 800, y: 230}];
@@ -64,12 +64,13 @@ function level1Path(num) {
     });
   } else if (!isNaN(turns)) {//health checker
     // reached the end
-    //controller.health -= 50;
+    controller.health -= 20;
     //controller.health -= $('#enemy' + num).attr('data-damage');
     $('#health').html(controller.health);
     
     ///display lose or win screen here
     if(controller.health <= 0){
+      controller.health = 0;
       winLose = true;//used if win or lose. to stop pause from happening
       document.getElementById("loseScreen").style.visibility = "visible";
       document.getElementById("fadeIn").style.visibility = "visible";
@@ -79,20 +80,7 @@ function level1Path(num) {
       }   
     }
     $('#enemy' + num).remove();
-    //win should show when all enemies finish spawning and no enemy on the board
-    enemyCount++;
-    if(enemyCount >= level1Enemies.length && controller.health > 0)//you win when all enemies in the level has spawned and you have health > 0
-      {
-        winLose = true;
-        youWin = true;// do something
-        document.getElementById("winScreen").style.visibility = "visible";
-        document.getElementById("fadeIn").style.visibility = "visible";
-        if(paused){//bug fix with removing pause menu
-          document.getElementById("pauseMenu").style.visibility = "hidden";
-          paused = false;
-        }   
-      }
-    
+    checkWinCondition();// increase counter if an enemy doesnt get killed
   }
   
   /*$('.enemy').each(function() {
@@ -113,11 +101,32 @@ function level1Path(num) {
   });*/
 }
 
+function checkWinCondition()
+{
+   enemyCount++;// to count for enemies killed 
+  //need to check if all enemies spawned
+   //win should show when all enemies finish spawning and no enemy on the board
+    if(enemyCount >= level1Enemies.length && controller.health > 0)//you win when all enemies in the level has spawned and you have health > 0
+      {
+        winLose = true;
+        youWin = true;// do something
+        document.getElementById("winScreen").style.visibility = "visible";
+        document.getElementById("fadeIn").style.visibility = "visible";
+        if(paused){//bug fix with removing pause menu
+          document.getElementById("pauseMenu").style.visibility = "hidden";
+          paused = false;
+        }   
+        if(numTurrets <=2)
+          achievementUnlocked("WIN WITH ONLY 2 TURRETS!");
+      }
+}
+
 function level1() {
     //$('#timer').html(level1Times[num]);
     
     makeEnemy(level1Enemies[num], 1);
   //  alert(paused);
+  
     num += 1;
     if (num <= (level1Times.length - 1)) {
         t = new Timer(level1, level1Times[num]*1000);
