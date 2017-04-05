@@ -8,6 +8,7 @@ module.exports = {
 
     main(); //AI.js
     //initFiring();
-
+    $('#introModal1').modal('show');// show intro modal
   }
+  
 };

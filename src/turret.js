@@ -1,5 +1,5 @@
 // Enemy info
-var level1TDamage = [20, 25]; // the damage for all turrets
+var level1TDamage = [30, 50]; // the damage for all turrets
 var level1TRange = [100, 200]; // the range for all turrets
 var level1TRate = [1, 1]; // time in between shots for turrets in seconds
 
@@ -12,13 +12,14 @@ $('ul.turrets li div').each(function(){
     $(this).mouseover(function(){ 
         switch(this.id){
             case 'turretB1':
-                $('.description').text(this.id + ": <cool turret info>")
+                $('.description').text("This little one has a little green thumb which she uses to clean up the world one thumb full at a time.")
                 break;
             case 'turretB2':
-                $('.description').text(this.id + ": <another cool turret info>")
+                $('.description').text("A speedy little persistent robot who's whole purpose in life is to clean up any mess it can reach. (2x the range of PewPew)")
                 break;
             case 'turretB3':
-                $('.description').text(this.id + ": <ultimate cool turret info>")
+                $('.description').text("Puny algae machine that can be placed on the tracks to slow down or erase the remains of oil blobs and such")
+                break;
         }
          $('.description').show();
         
@@ -30,25 +31,31 @@ $('ul.turrets li div').each(function(){
     
 });
 
-
+//set red cross to show if not enough money and disable click
 function turretCheck(){ 
     if(money >= 50){ 
         $("#turretB1").css({"background-color" : "transparent", "pointerEvents" : "auto"}); 
+       $("#redCross1").css({"visibility" : "hidden"});
     } 
     else{ 
-        $("#turretB1").css({"background-color" : "black" , "pointerEvents" : "none"}); 
+        $("#redCross1").css({"visibility" : "visible"}); 
+       $("#turretB1").css({"pointerEvents" : "none"});
     } 
     if(money >= 100){ 
         $("#turretB2").css({"background-color" : "transparent", "pointerEvents" : "auto"}); 
+      $("#redCross2").css({"visibility" : "hidden"});
     } 
     else{ 
-        $("#turretB2").css({"background-color" : "black", "pointerEvents" : "none"}); 
+        $("#turretB2").css({"pointerEvents" : "none"}); 
+      $("#redCross2").css({"visibility" : "visible"});  
     } 
     if(money >= 150){ 
          $("#turretB3").css({"background-color" : "transparent", "pointerEvents" : "auto"}); 
+      $("#redCross3").css({"visibility" : "hidden"});
     } 
     else{ 
-        $("#turretB3").css({"background-color" : "black", "pointerEvents" : "none"}); 
+        $("#turretB3").css({"pointerEvents" : "none"}); 
+      $("#redCross3").css({"visibility" : "visible"});
     } 
 } 
 
@@ -69,13 +76,9 @@ function place(type, id) {
       hasMoney = true;
   placing = type;
   placingID = id;
-  $('#lv1bgimg').css('cursor', 'url(img/placement/' + type + '.png) 16 16, auto');
+  $('#lv1bgimg').css('cursor', 'url(img/placement/' + type + '.png) 16 16, auto');// places the image of the turret on the board
   $('.gridslot').show();
    }
-    else{
-        $('#moneyModal').modal('toggle');
-    }
-  
 }
 
 $('#lv1bgimg').click(function(event) {  
@@ -112,7 +115,7 @@ $('#lv1bgimg').mousemove(function(event) {
     // debugging
    //$('.debug').html(xx + ", " + yy);
     
-    if (grid[xx][yy] != "empty" || xx < 0 || yy < 0 || xx >= 20 || yy >= 20) {
+    if ((grid[xx][yy] != "empty" && placing != "turret3") || (grid[xx][yy] == "empty" && placing == "turret3") || xx < 0 || yy < 0 || xx >= 20 || yy >= 20) {
       $('#lv1bgimg').css('cursor', 'url(img/placement/reds/' + placing + '.png) 16 16, auto');
       $('.gridslot').css('background-color', 'rgba(255,0,0,0.5)');
       placeable = false;

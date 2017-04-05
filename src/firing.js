@@ -26,9 +26,10 @@ function fire(index) {
     var dmg = parseInt($('#turret' + index).attr('data-damage'));
     var curHealth = parseInt($('#' + closest).attr('data-life'));
     if (curHealth <= dmg) {
-      money+=10;
+      money+=20;
       $('.money').text(money.toString());
       $('#' + closest).remove();
+      checkWinCondition();
     } else {
       $('#' + closest).attr('data-life', curHealth - dmg);
       $('#' + closest).css('filter', 'invert(1)');
