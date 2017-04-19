@@ -222,6 +222,10 @@ function main() {
       }
   });
   
+  
+  $('.level-title').click(function() {
+    $('#introModal1').modal('show');
+  });
   ////pause game stuff ^////////
   //to disable turret if the money is less than the cost     
   setInterval(function(){turretCheck();}, 1000); 
