@@ -33,13 +33,13 @@ $("#dropB").click(function() {//ignore this function..
 
 //INFO PAGE STUFF///
 $("#howToPlay").click(function() {
-  $("#infoTitle").text("How To Play");
- $("#infoText").html("<b> Controls:</b> <br> P - Info Menu <br> <br> <b>Objectives:</b> <br> Stop any oil bloobs from escaping the envioronment by placing Pew Pew, PaPa Pew, and Blob Stopper along its path. These turrets will attack the oil blobs, can you sustain the enviornment to destroy as many oil blobs as possible?");
+  $("#infoTitle").text("Introduction");
+ $("#infoText").html("<b> Controls:</b> <br> P - Info Menu <br> <br> <b>Objectives:</b> <br> Stop any oil bloobs and other hazardous materials from entering our city. By placing tower defenses along the given path, they will help in keeping our city and environment safe. can you sustain the enviornment and destroy as much of the toxic materials as possible?");
 });
 
 $("#aboutSus").click(function() {
   $("#infoTitle").text("About The Game");
-  $("#infoText").html(" <b><i>Sustain It </b></i> is a game that utilizes the concept of sustainability into a Tower Defense style game.<br> <p>1. Earn RP (Recycle Points) by successfully destroying enemies with your defenses.</p> <p>2. You lose Health if an enemy successfully reaches the end of the path</p><p><b>The game ends when:</b></p><ul><li>You successfully destroyed all enemies</li><li>Your health reaches 0</li></ul><p><center><b>How To Play</b></center></p><p>Click on a turret to place it in an available space on the map</p>");
+  $("#infoText").html(" <b><i>Sustain It </b></i> is a game that utilizes the concept of sustainability into a Tower Defense style game.<br> <p>1. Earn RP (Recycle Points) by successfully destroying enemies with your defenses.</p> <p>2. You lose Health if an enemy successfully reaches the end of the path</p><p><b>The game ends when:</b></p><ul><li>You successfully destroyed all enemies</li><li>Your health reaches 0</li></ul><p><center>");
 });
 
 $("#credits").click(function() {

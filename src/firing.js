@@ -38,7 +38,7 @@ function fire(index) {
       }, 200);
       var ang = Math.round(Math.atan2(ty - ey, tx - ex) * 180 / Math.PI);
       if (closest == "enemy0") {
-        $('.debug').html('angle: ' + ang);
+        //$('.debug').html('angle: ' + ang);
       }
       $('#turret' + index).css('transform', 'rotate(' + ang + 'deg)');
       
