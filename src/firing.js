@@ -43,6 +43,9 @@ function fire(index) {
       $('#turret' + index).css('transform', 'rotate(' + ang + 'deg)');
       
     }
+    if ($('#turret' + index).hasClass('turret3')) {
+      $('#turret' + index).remove();
+    }
   }
 }
 
