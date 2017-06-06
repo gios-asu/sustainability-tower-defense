@@ -7,6 +7,20 @@
     text-align: center;
 }
 
+.level-title {
+    color: red;
+    font-family: papyrus;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+  display: none;
+}
+
+.level-title:hover {
+  cursor: pointer;
+}
+
 .button {
   display: inline-block;
   border-radius: 4px;

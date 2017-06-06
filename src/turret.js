@@ -1,7 +1,7 @@
 // Enemy info
-var level1TDamage = [30, 50]; // the damage for all turrets
-var level1TRange = [100, 200]; // the range for all turrets
-var level1TRate = [1, 1]; // time in between shots for turrets in seconds
+var level1TDamage = [30, 50, 150]; // the damage for all turrets
+var level1TRange = [100, 200, 40]; // the range for all turrets
+var level1TRate = [1, 1, 0.5]; // time in between shots for turrets in seconds
 
 var placing = "0"; // default, means we aren't placing anything
 var placingID = -1;
